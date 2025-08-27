@@ -1,15 +1,21 @@
-const ModelViewer = ({ ...rest }) => {
+const ModelViewer = ({ isAnnotationsOn, ...rest }) => {
   return (
     <>
       <model-viewer {...rest}>
-        <button
-          class="hotspot"
-          slot="hotspot-hand"
-          data-position="0 0 0"
-          data-normal="0 0 0"
-        >
-          <div class="annotation">This hotspot disappears completely</div>
-        </button>
+        {isAnnotationsOn && (
+          <>
+            <div slot="hotspot-0" data-position="-0.0569m 0.0969m -0.1398m">
+              The back
+            </div>
+            <div
+              slot="hotspot-1"
+              class="anchor"
+              data-surface="0 0 228 113 111 0.217 0.341 0.442"
+            >
+              Clamp
+            </div>
+          </>
+        )}
       </model-viewer>
     </>
   );

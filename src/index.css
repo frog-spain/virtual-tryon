@@ -68,3 +68,7 @@ model-viewer {
     background-color: #8f7f72;
   }
 }
+
+.option-button.active {
+  background-color: #5c4b45;
+}
