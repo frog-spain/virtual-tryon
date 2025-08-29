@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 import ModelViewer from './ModelViewer';
 import InteractiveOptions from './InteractiveOptions';
@@ -15,13 +15,11 @@ const MainContainer = () => {
 
       <ModelViewer
         src="/assets/models/crab-animation.glb"
-        camera-controls
-        touch-action="pan-y"
-        shadow-intensity="2"
         autoplay={isAnimationOn}
         isAnnotationsOn={isAnnotationsOn}
         auto-rotate={isAutorotateOn}
         skybox-image={isBackgroundOn && '/assets/bg-sky.hdr'}
+        environment-image={isBackgroundOn && '/assets/bg-sky.hdr'}
       />
 
       <InteractiveOptions
