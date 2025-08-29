@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
-import ModelViewer from './ModelViewer';
-import InteractiveOptions from './InteractiveOptions';
+import ModelViewer from '../components/ModelViewer';
+import InteractiveOptions from '../components/InteractiveOptions';
 
 const MainContainer = () => {
   const [isAnimationOn, setIsAnimationOn] = useState(false);

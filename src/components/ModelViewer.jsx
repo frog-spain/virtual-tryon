@@ -7,6 +7,7 @@ const ModelViewer = ({ isAnnotationsOn, ...rest }) => {
         shadow-softness="0.82"
         exposure="1.49"
         tone-mapping="neutral"
+        auto-rotate-delay="100"
         {...rest}
       >
         {isAnnotationsOn && (
