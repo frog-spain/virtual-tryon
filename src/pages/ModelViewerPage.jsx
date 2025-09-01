@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import ModelViewer from '../components/ModelViewer';
+import CrabModelViewer from '../components/CrabModelViewer';
 import InteractiveOptions from '../components/InteractiveOptions';
 import BackButton from '../components/BackButton';
 
@@ -15,8 +15,7 @@ const MainContainer = () => {
       <BackButton />
       <h1>model-viewer</h1>
 
-      <ModelViewer
-        src="/assets/models/crab-animation.glb"
+      <CrabModelViewer
         autoplay={isAnimationOn}
         isAnnotationsOn={isAnnotationsOn}
         auto-rotate={isAutorotateOn}

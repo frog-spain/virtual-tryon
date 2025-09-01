@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { getFaceLandmarker } from '../../lib/mediapipe';
 
-export default function GlassesDemo() {
+export default function Glasses2DDemo() {
   const videoRef = useRef(null);
   const canvasRef = useRef(null);
 

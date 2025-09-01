@@ -24,7 +24,10 @@ export default function Home() {
             Model Viewer
           </Link>
           <Link to="/mediapipe" class="option-button">
-            MediaPipe AR
+            MediaPipe 2D
+          </Link>
+          <Link to="/mediapipe-3d" class="option-button">
+            MediaPipe 3D
           </Link>
         </div>
       </div>

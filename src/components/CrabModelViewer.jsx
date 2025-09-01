@@ -1,13 +1,15 @@
-const ModelViewer = ({ isAnnotationsOn, ...rest }) => {
+const CrabModelViewer = ({ isAnnotationsOn, ...rest }) => {
   return (
     <>
       <model-viewer
         camera-controls
+        src="/assets/models/crab-animation.glb"
         shadow-intensity="0.92"
         shadow-softness="0.82"
         exposure="1.49"
         tone-mapping="neutral"
         auto-rotate-delay="100"
+        alt="A 3D model of a crab"
         {...rest}
       >
         {isAnnotationsOn && (
@@ -65,4 +67,4 @@ const ModelViewer = ({ isAnnotationsOn, ...rest }) => {
   );
 };
 
-export default ModelViewer;
+export default CrabModelViewer;
