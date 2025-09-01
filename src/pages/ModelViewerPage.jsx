@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 import ModelViewer from '../components/ModelViewer';
 import InteractiveOptions from '../components/InteractiveOptions';
+import BackButton from '../components/BackButton';
 
 const MainContainer = () => {
   const [isAnimationOn, setIsAnimationOn] = useState(false);
@@ -10,7 +11,8 @@ const MainContainer = () => {
   const [isBackgroundOn, setIsBackgroundOn] = useState(false);
 
   return (
-    <div class="model-viewer-container">
+    <div class="demo-container">
+      <BackButton />
       <h1>model-viewer</h1>
 
       <ModelViewer
