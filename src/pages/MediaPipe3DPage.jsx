@@ -1,14 +1,14 @@
 import BackButton from '../components/BackButton';
-import GlassesModelViewer from '../components/GlassesModelViewer';
+import Glasses3DDemo from '../components/Glasses3DDemo';
 
 export default function MediaPipePage() {
   return (
-    <div class="demo-container">
+    <div className="demo-container">
       <BackButton />
 
       <h1>MediaPipe – 3D Glasses</h1>
       <p>Face tracking demo using MediaPipe Tasks (Face Landmarker).</p>
-      <GlassesModelViewer />
+      <Glasses3DDemo />
     </div>
   );
 }

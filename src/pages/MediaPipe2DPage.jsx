@@ -3,7 +3,7 @@ import BackButton from '../components/BackButton';
 
 export default function MediaPipePage() {
   return (
-    <div class="demo-container">
+    <div className="demo-container">
       <BackButton />
 
       <h1>MediaPipe – 2D Glasses</h1>

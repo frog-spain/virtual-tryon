@@ -11,7 +11,7 @@ const MainContainer = () => {
   const [isBackgroundOn, setIsBackgroundOn] = useState(false);
 
   return (
-    <div class="demo-container">
+    <div className="demo-container">
       <BackButton />
       <h1>model-viewer</h1>
 

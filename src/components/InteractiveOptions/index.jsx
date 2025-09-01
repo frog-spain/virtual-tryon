@@ -11,7 +11,7 @@ const ModelViewerOptions = ({
   isBackgroundOn,
 }) => {
   return (
-    <ul class="options-list">
+    <ul className="options-list">
       <li>
         <OptionButton
           label="Animation"

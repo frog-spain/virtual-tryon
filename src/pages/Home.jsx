@@ -20,13 +20,13 @@ export default function Home() {
             gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
           }}
         >
-          <Link to="/model-viewer" class="option-button">
+          <Link to="/model-viewer" className="option-button">
             Model Viewer
           </Link>
-          <Link to="/mediapipe" class="option-button">
+          <Link to="/mediapipe" className="option-button">
             MediaPipe 2D
           </Link>
-          <Link to="/mediapipe-3d" class="option-button">
+          <Link to="/mediapipe-3d" className="option-button">
             MediaPipe 3D
           </Link>
         </div>
