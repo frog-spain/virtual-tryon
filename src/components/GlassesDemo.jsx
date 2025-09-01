@@ -30,8 +30,6 @@ export default function GlassesDemo() {
         stream = await navigator.mediaDevices.getUserMedia({
           video: {
             facingMode: 'user', // selfie
-            width: { ideal: 1280 },
-            height: { ideal: 720 },
           },
           audio: false,
         });
@@ -73,8 +71,9 @@ export default function GlassesDemo() {
       }
 
       // Match canvas to the actual video size for crisp overlay
-      const vw = video.videoWidth || 1280;
-      const vh = video.videoHeight || 720;
+
+      const vw = video.videoWidth;
+      const vh = video.videoHeight;
       if (canvas.width !== vw || canvas.height !== vh) {
         canvas.width = vw;
         canvas.height = vh;
@@ -106,29 +105,23 @@ export default function GlassesDemo() {
 
   //   Main return
   return (
-    <div style={{ position: 'relative', width: 'min(100%, 960px)' }}>
-      {/* <img src="/assets/mediapipe/cat-glasses.png" alt="Glasses" /> */}
-
+    <div style={{ position: 'relative' }}>
       <video
         ref={videoRef}
         playsInline
         muted
         style={{
-          width: '100%',
           borderRadius: 12,
           transform: 'scaleX(-1)', // mirror selfie
-          background: '#000',
         }}
       />
       <canvas
         ref={canvasRef}
         style={{
           position: 'absolute',
-          inset: 0,
-          width: '100%',
-          height: '100%',
+          left: 0,
+          top: 0,
           transform: 'scaleX(-1)', // mirror overlay to match video
-          pointerEvents: 'none',
         }}
       />
     </div>
@@ -167,14 +160,11 @@ function drawGlasses(ctx, face, img, w, h) {
   const angle = Math.atan2(vy, vx);
 
   // Scale the glasses a bit wider than the inter-eye distance
-  const width = eyeDist * 2.2; // tweak to taste
+  const width = eyeDist * 1.9;
   const height = (img.height / img.width) * width;
 
-  // Lift glasses slightly so frame sits on the eyes
-  const yOffset = -height * 0.45;
-
   ctx.save();
-  ctx.translate(center.x, center.y + yOffset);
+  ctx.translate(center.x, center.y);
   ctx.rotate(angle);
   ctx.drawImage(img, -width / 2, -height / 2, width, height);
   ctx.restore();
