@@ -36,6 +36,19 @@ h1 {
   gap: 20px;
 }
 
+.back-button {
+  align-self: flex-start;
+
+  color: #756a61;
+  text-decoration: none;
+
+  &:hover {
+    color: #5c4b45;
+  }
+}
+
+/* Model-viwer */
+
 model-viewer {
   width: 700px;
   height: min(70vh, 500px);
@@ -79,15 +92,4 @@ model-viewer {
   background-color: #f0f0f0;
   padding: 4px 8px;
   border-radius: 4px;
-}
-
-.back-button {
-  align-self: flex-start;
-
-  color: #756a61;
-  text-decoration: none;
-
-  &:hover {
-    color: #5c4b45;
-  }
 }

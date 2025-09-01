@@ -7,9 +7,7 @@ export default function MediaPipePage() {
       <BackButton />
 
       <h1>MediaPipe – Glasses</h1>
-      <p style={{ color: '#666' }}>
-        Face tracking demo using MediaPipe Tasks (Face Landmarker).
-      </p>
+      <p>Face tracking demo using MediaPipe Tasks (Face Landmarker).</p>
 
       <GlassesDemo />
     </div>
