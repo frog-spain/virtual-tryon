@@ -47,8 +47,17 @@ h1 {
   }
 }
 
-/* Model-viwer */
+.option-button.active {
+  background-color: #5c4b45;
+}
 
+.hotspot {
+  background-color: #f0f0f0;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+/* Model-viwer */
 model-viewer {
   width: 700px;
   height: min(70vh, 500px);
@@ -84,12 +93,24 @@ model-viewer {
   }
 }
 
-.option-button.active {
-  background-color: #5c4b45;
+/* MediaPipe */
+.position-absolute {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  transform: scaleX(-1); /* mirror for selfie effect */
 }
 
-.hotspot {
-  background-color: #f0f0f0;
-  padding: 4px 8px;
-  border-radius: 4px;
+.position-relative {
+  position: relative;
+}
+
+.demo-wrapper {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 10px;
 }

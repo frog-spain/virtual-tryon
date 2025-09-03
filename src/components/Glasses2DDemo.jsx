@@ -71,7 +71,6 @@ export default function Glasses2DDemo() {
       }
 
       // Match canvas to the actual video size for crisp overlay
-
       const vw = video.videoWidth;
       const vh = video.videoHeight;
       if (canvas.width !== vw || canvas.height !== vh) {
@@ -112,18 +111,10 @@ export default function Glasses2DDemo() {
         muted
         style={{
           borderRadius: 12,
-          transform: 'scaleX(-1)', // mirror selfie
+          transform: 'scaleX(-1)',
         }}
       />
-      <canvas
-        ref={canvasRef}
-        style={{
-          position: 'absolute',
-          left: 0,
-          top: 0,
-          transform: 'scaleX(-1)', // mirror overlay to match video
-        }}
-      />
+      <canvas ref={canvasRef} className="position-bsolute" />
     </div>
   );
 }
@@ -140,12 +131,8 @@ function drawGlasses(ctx, face, img, w, h) {
   // Helper to convert normalized landmark to pixel coords
   const px = (i) => ({ x: face[i].x * w, y: face[i].y * h });
 
-  // Choose robust, opposite eye corner indices
-  // Common FaceMesh indices:
-  //   33  -> left eye outer corner
-  //   263 -> right eye outer corner
-  const leftOuter = px(33);
-  const rightOuter = px(263);
+  const leftOuter = px(33); //   33  -> left eye outer corner
+  const rightOuter = px(263); //   263 -> right eye outer corner
 
   // Midpoint => where the glasses should be centered
   const center = {
@@ -159,8 +146,7 @@ function drawGlasses(ctx, face, img, w, h) {
   const eyeDist = Math.hypot(vx, vy);
   const angle = Math.atan2(vy, vx);
 
-  // Scale the glasses a bit wider than the inter-eye distance
-  const width = eyeDist * 1.9;
+  const width = eyeDist * 1.9; // Scaling glasses a bit
   const height = (img.height / img.width) * width;
 
   ctx.save();
