@@ -38,6 +38,7 @@ h1 {
 
 .back-button {
   align-self: flex-start;
+  margin-bottom: auto;
 
   color: #756a61;
   text-decoration: none;

@@ -2,28 +2,34 @@ import { useEffect } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { useGLTF } from '@react-three/drei';
 import { Matrix4, Vector3, Quaternion } from 'three';
+import NoseDot from './NoseDot';
 
-function GlassesModel({ transformMatrix, scale = 13 }) {
+export default function GlassesScene({
+  transformMatrix,
+  nosePosition,
+  customScale = 14,
+}) {
   const { scene } = useGLTF('/assets/models/glasses.glb');
 
   useEffect(() => {
     if (transformMatrix) {
-      scene.matrix.fromArray(transformMatrix);
-      scene.matrix.decompose(scene.position, scene.quaternion, scene.scale);
+      const m = new Matrix4().fromArray(transformMatrix);
+      const position = new Vector3();
+      const rotation = new Quaternion();
+      const scale = new Vector3();
 
-      scene.scale.set(scale, scale, scale);
+      m.decompose(position, rotation, scale);
+
+      scene.position.copy(position);
+      scene.quaternion.copy(rotation);
+      scene.scale.set(customScale, customScale, customScale);
       scene.updateMatrix();
       scene.matrixAutoUpdate = false;
     }
   }, [transformMatrix]);
 
-  return <primitive object={scene} />;
-}
-
-export default function GlassesScene({ transformMatrix }) {
   return (
     <Canvas
-      camera={{ position: [0, 0, 2] }}
       style={{
         position: 'absolute',
         top: 0,
@@ -34,7 +40,12 @@ export default function GlassesScene({ transformMatrix }) {
     >
       <ambientLight intensity={0.5} />
       <directionalLight position={[0, 0, 5]} />
-      <GlassesModel transformMatrix={transformMatrix} />
+
+      {/* Glasses model */}
+      {/* <primitive object={scene} /> */}
+
+      {/* Dot */}
+      <NoseDot nosePosition={nosePosition} />
     </Canvas>
   );
 }
