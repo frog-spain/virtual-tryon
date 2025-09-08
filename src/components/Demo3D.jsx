@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { getFaceLandmarker } from '../../lib/mediapipe';
-import GlassesScene from './GlassesScene';
+import ThreeScene from './ThreeScene';
 import OptionButton from '../ui/OptionButton';
 
 const Demo3D = () => {
@@ -106,7 +106,7 @@ const Demo3D = () => {
         />
 
         {/* Glasses */}
-        <GlassesScene
+        <ThreeScene
           transformMatrix={transformMatrix}
           nosePosition={nosePosition}
         />
