@@ -1,8 +1,9 @@
 import { Canvas } from '@react-three/fiber';
 
-import GlassesModel from './GlassesModel';
+import GlassesModel from './models/GlassesModel';
+import HelmetModel from './models/HelmetModel';
 
-export default function GlassesScene({ transformMatrix, nosePosition }) {
+export default function ({ transformMatrix, nosePosition }) {
   return (
     <Canvas
       style={{
@@ -14,13 +15,15 @@ export default function GlassesScene({ transformMatrix, nosePosition }) {
       }}
     >
       <ambientLight intensity={0.5} />
-      <directionalLight position={[0, 0, 5]} />
+      <directionalLight position={[0, 0, 5]} intensity={8.5} />
 
       {/* Glasses model */}
-      <GlassesModel
+      {/* <GlassesModel
         nosePosition={nosePosition}
         transformMatrix={transformMatrix}
-      />
+      /> */}
+      {/* Helmet model */}
+      <HelmetModel transformMatrix={transformMatrix} />
     </Canvas>
   );
 }
