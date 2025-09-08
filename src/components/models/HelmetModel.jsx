@@ -4,7 +4,7 @@ import { Matrix4, Vector3, Quaternion } from 'three';
 
 const HelmetModel = ({ transformMatrix }) => {
   const { scene } = useGLTF('/assets/models/helmet.glb');
-  const customScale = 8;
+  const customScale = 7.4;
 
   useEffect(() => {
     if (transformMatrix) {
