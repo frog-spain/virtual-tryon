@@ -114,7 +114,7 @@ export default function Glasses2DDemo() {
           transform: 'scaleX(-1)',
         }}
       />
-      <canvas ref={canvasRef} className="position-bsolute" />
+      <canvas ref={canvasRef} className="position-absolute" />
     </div>
   );
 }

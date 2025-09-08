@@ -1,4 +1,4 @@
-import OptionButton from './OptionButton';
+import OptionButton from '../OptionButton';
 
 const ModelViewerOptions = ({
   handleAnimationClick,

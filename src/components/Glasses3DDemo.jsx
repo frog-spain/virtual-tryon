@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { getFaceLandmarker } from '../../lib/mediapipe';
 import GlassesScene from './GlassesScene';
-import OptionButton from './InteractiveOptions/OptionButton';
+import OptionButton from '../ui/OptionButton';
 
 const Glasses3DDemo = () => {
   const videoRef = useRef(null);

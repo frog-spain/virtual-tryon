@@ -1,5 +1,5 @@
 import GlassesDemo from '../components/Glasses2DDemo';
-import BackButton from '../components/ui/BackButton';
+import BackButton from '../ui/BackButton';
 
 export default function MediaPipePage() {
   return (

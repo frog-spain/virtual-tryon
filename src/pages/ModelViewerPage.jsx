@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
-import CrabModelViewer from '../components/CrabModelViewer';
-import InteractiveOptions from '../components/ui/InteractiveOptions';
-import BackButton from '../components/ui/BackButton';
+import CrabModelViewer from '../components/models/CrabModelViewer';
+import BackButton from '../ui/BackButton';
+import ModelViewerOptions from '../ui/InteractiveOptions/ModelViewerOptions';
 
 const MainContainer = () => {
   const [isAnimationOn, setIsAnimationOn] = useState(false);
@@ -24,7 +24,7 @@ const MainContainer = () => {
         environment-image={isBackgroundOn && '/assets/bg-sky.hdr'}
       />
 
-      <InteractiveOptions
+      <ModelViewerOptions
         handleAnimationClick={() => setIsAnimationOn(!isAnimationOn)}
         handleAnnotationsClick={() => setIsAnnotationsOn(!isAnnotationsOn)}
         handleAutorotateClick={() => setIsAutorotateOn(!isAutorotateOn)}
