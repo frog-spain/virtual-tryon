@@ -3,7 +3,7 @@ import { getFaceLandmarker } from '../../lib/mediapipe';
 import GlassesScene from './GlassesScene';
 import OptionButton from '../ui/OptionButton';
 
-const Glasses3DDemo = () => {
+const Demo3D = () => {
   const videoRef = useRef(null);
   const canvasRef = useRef(null);
 
@@ -115,4 +115,4 @@ const Glasses3DDemo = () => {
   );
 };
 
-export default Glasses3DDemo;
+export default Demo3D;
