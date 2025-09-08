@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
 import CrabModelViewer from '../components/CrabModelViewer';
-import InteractiveOptions from '../components/InteractiveOptions';
-import BackButton from '../components/BackButton';
+import InteractiveOptions from '../components/ui/InteractiveOptions';
+import BackButton from '../components/ui/BackButton';
 
 const MainContainer = () => {
   const [isAnimationOn, setIsAnimationOn] = useState(false);

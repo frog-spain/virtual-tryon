@@ -1,4 +1,4 @@
-import BackButton from '../components/BackButton';
+import BackButton from '../components/ui/BackButton';
 import Glasses3DDemo from '../components/Glasses3DDemo';
 
 export default function MediaPipePage() {
