@@ -102,10 +102,12 @@ const Demo3D = () => {
         <OptionButton
           label={`Mesh ${isMeshOn ? 'ON' : 'OFF'}`}
           onClick={() => setIsMeshOn(!isMeshOn)}
+          isActive={isMeshOn}
         />
         <OptionButton
-          label={`Object ${isMeshOn ? 'ON' : 'OFF'}`}
+          label={`Object ${isObjectOn ? 'ON' : 'OFF'}`}
           onClick={() => setIsObjectOn(!isObjectOn)}
+          isActive={isObjectOn}
         />
         <div className="object-controllers">
           <OptionButton label="← Prev" onClick={clickPrev} />
