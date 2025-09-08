@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useGLTF } from '@react-three/drei';
 import { Matrix4, Vector3, Quaternion } from 'three';
 
-const HatModel = ({ transformMatrix }) => {
+const HatModel = ({ transformMatrix, visible }) => {
   const { scene } = useGLTF('/assets/models/hat.glb');
   const customScale = 24;
 
@@ -23,7 +23,7 @@ const HatModel = ({ transformMatrix }) => {
     }
   }, [transformMatrix]);
 
-  return <primitive object={scene} />;
+  return <primitive object={scene} visible={visible} />;
 };
 
 export default HatModel;

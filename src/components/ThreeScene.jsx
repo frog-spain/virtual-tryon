@@ -1,9 +1,11 @@
+import { Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
 
 import GlassesModel from './models/GlassesModel';
 import HelmetModel from './models/HelmetModel';
+import HatModel from './models/HatModel';
 
-export default function ({ transformMatrix, nosePosition }) {
+export default function ({ transformMatrix, nosePosition, objectToRender }) {
   return (
     <Canvas
       style={{
@@ -14,16 +16,29 @@ export default function ({ transformMatrix, nosePosition }) {
         transform: 'scaleX(-1)',
       }}
     >
-      <ambientLight intensity={0.5} />
-      <directionalLight position={[0, 0, 5]} intensity={8.5} />
+      <ambientLight intensity={2.5} />
+      <directionalLight position={[0, 0, 5]} intensity={5.5} />
 
-      {/* Glasses model */}
-      {/* <GlassesModel
-        nosePosition={nosePosition}
-        transformMatrix={transformMatrix}
-      /> */}
-      {/* Helmet model */}
-      <HelmetModel transformMatrix={transformMatrix} />
+      <Suspense fallback={null}>
+        {/* Glasses */}
+        <GlassesModel
+          visible={objectToRender === 'glasses'}
+          nosePosition={nosePosition}
+          transformMatrix={transformMatrix}
+        />
+
+        {/* Helmet */}
+        <HelmetModel
+          transformMatrix={transformMatrix}
+          visible={objectToRender === 'helmet'}
+        />
+
+        {/* Hat */}
+        <HatModel
+          transformMatrix={transformMatrix}
+          visible={objectToRender === 'hat'}
+        />
+      </Suspense>
     </Canvas>
   );
 }

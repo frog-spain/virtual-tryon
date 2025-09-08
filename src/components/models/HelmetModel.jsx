@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useGLTF } from '@react-three/drei';
 import { Matrix4, Vector3, Quaternion } from 'three';
 
-const HelmetModel = ({ transformMatrix }) => {
+const HelmetModel = ({ transformMatrix, visible }) => {
   const { scene } = useGLTF('/assets/models/helmet.glb');
   const customScale = 7.4;
 
@@ -23,7 +23,7 @@ const HelmetModel = ({ transformMatrix }) => {
     }
   }, [transformMatrix]);
 
-  return <primitive object={scene} />;
+  return <primitive object={scene} visible={visible} />;
 };
 
 export default HelmetModel;

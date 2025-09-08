@@ -11,6 +11,22 @@ const Demo3D = () => {
   const [nosePosition, setNosePosition] = useState(null);
 
   const [isMeshOn, setIsMeshOn] = useState(true);
+  const [isObjectOn, setIsObjectOn] = useState(true);
+
+  const objects = ['glasses', 'helmet', 'hat'];
+  const [currentObjectIdx, setCurrentObjectIdx] = useState(0);
+
+  const clickNext = () => {
+    let newCurrent = currentObjectIdx + 1;
+    if (newCurrent === objects.length) newCurrent = 0;
+    setCurrentObjectIdx(newCurrent);
+  };
+
+  const clickPrev = () => {
+    let newCurrent = currentObjectIdx - 1;
+    if (newCurrent === -1) newCurrent = objects.length - 1;
+    setCurrentObjectIdx(newCurrent);
+  };
 
   useEffect(() => {
     let stream = null;
@@ -82,10 +98,20 @@ const Demo3D = () => {
 
   return (
     <div className="demo-wrapper">
-      <OptionButton
-        label={`Mesh ${isMeshOn ? 'ON' : 'OFF'}`}
-        onClick={() => setIsMeshOn(!isMeshOn)}
-      />
+      <ul className="options-list">
+        <OptionButton
+          label={`Mesh ${isMeshOn ? 'ON' : 'OFF'}`}
+          onClick={() => setIsMeshOn(!isMeshOn)}
+        />
+        <OptionButton
+          label={`Object ${isMeshOn ? 'ON' : 'OFF'}`}
+          onClick={() => setIsObjectOn(!isObjectOn)}
+        />
+        <div className="object-controllers">
+          <OptionButton label="← Prev" onClick={clickPrev} />
+          <OptionButton label="Next →" onClick={clickNext} />
+        </div>
+      </ul>
 
       <div className="position-relative">
         <video
@@ -105,11 +131,14 @@ const Demo3D = () => {
           style={{ display: `${isMeshOn ? 'inherit' : 'none'}` }}
         />
 
-        {/* Glasses */}
-        <ThreeScene
-          transformMatrix={transformMatrix}
-          nosePosition={nosePosition}
-        />
+        {/* Theejs Object */}
+        {isObjectOn && (
+          <ThreeScene
+            transformMatrix={transformMatrix}
+            nosePosition={nosePosition}
+            objectToRender={objects[currentObjectIdx]}
+          />
+        )}
       </div>
     </div>
   );

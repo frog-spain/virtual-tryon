@@ -3,7 +3,7 @@ import { useThree } from '@react-three/fiber';
 import { useGLTF } from '@react-three/drei';
 import { Matrix4, Vector3, Quaternion } from 'three';
 
-const GlassesModel = ({ transformMatrix, nosePosition }) => {
+const GlassesModel = ({ transformMatrix, nosePosition, visible }) => {
   const { scene } = useGLTF('/assets/models/glasses.glb');
   const { camera } = useThree();
   const customScale = 2.1;
@@ -46,7 +46,7 @@ const GlassesModel = ({ transformMatrix, nosePosition }) => {
     }
   }, [transformMatrix, nosePosition]);
 
-  return <primitive object={scene} />;
+  return <primitive object={scene} visible={visible} />;
 };
 
 export default GlassesModel;

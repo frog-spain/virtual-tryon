@@ -74,6 +74,7 @@ model-viewer {
   gap: 10px;
   justify-content: center;
   margin-block: 10px;
+  width: 100%;
 }
 
 .option-button {
@@ -113,5 +114,12 @@ model-viewer {
   display: flex;
   flex-direction: column;
   align-items: start;
+  gap: 10px;
+}
+
+.object-controllers {
+  margin-left: auto;
+
+  display: flex;
   gap: 10px;
 }
