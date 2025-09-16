@@ -14,26 +14,28 @@ const MainContainer = () => {
     <div className="demo-container">
       <BackButton />
 
-      <h1>model-viewer</h1>
+      <div className="demo">
+        <h1>model-viewer</h1>
 
-      <CrabModelViewer
-        autoplay={isAnimationOn}
-        isAnnotationsOn={isAnnotationsOn}
-        auto-rotate={isAutorotateOn}
-        skybox-image={isBackgroundOn && '/assets/bg-sky.hdr'}
-        environment-image={isBackgroundOn && '/assets/bg-sky.hdr'}
-      />
+        <CrabModelViewer
+          autoplay={isAnimationOn}
+          isAnnotationsOn={isAnnotationsOn}
+          auto-rotate={isAutorotateOn}
+          skybox-image={isBackgroundOn && '/assets/bg-sky.hdr'}
+          environment-image={isBackgroundOn && '/assets/bg-sky.hdr'}
+        />
 
-      <ModelViewerOptions
-        handleAnimationClick={() => setIsAnimationOn(!isAnimationOn)}
-        handleAnnotationsClick={() => setIsAnnotationsOn(!isAnnotationsOn)}
-        handleAutorotateClick={() => setIsAutorotateOn(!isAutorotateOn)}
-        handleBackgroundClick={() => setIsBackgroundOn(!isBackgroundOn)}
-        isAnimationOn={isAnimationOn}
-        isAnnotationsOn={isAnnotationsOn}
-        isAutorotateOn={isAutorotateOn}
-        isBackgroundOn={isBackgroundOn}
-      />
+        <ModelViewerOptions
+          handleAnimationClick={() => setIsAnimationOn(!isAnimationOn)}
+          handleAnnotationsClick={() => setIsAnnotationsOn(!isAnnotationsOn)}
+          handleAutorotateClick={() => setIsAutorotateOn(!isAutorotateOn)}
+          handleBackgroundClick={() => setIsBackgroundOn(!isBackgroundOn)}
+          isAnimationOn={isAnimationOn}
+          isAnnotationsOn={isAnnotationsOn}
+          isAutorotateOn={isAutorotateOn}
+          isBackgroundOn={isBackgroundOn}
+        />
+      </div>
     </div>
   );
 };
