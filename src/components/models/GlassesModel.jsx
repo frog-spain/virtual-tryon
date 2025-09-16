@@ -3,15 +3,21 @@ import { useThree } from '@react-three/fiber';
 import { useGLTF } from '@react-three/drei';
 import { Matrix4, Vector3, Quaternion } from 'three';
 
-const GlassesModel = ({ transformMatrix, nosePosition, visible }) => {
+const GlassesModel = ({
+  transformMatrix,
+  nosePosition,
+  eyeDistance,
+  visible,
+}) => {
   const { scene } = useGLTF('/assets/models/glasses.glb');
   const { camera } = useThree();
   const customScale = 2.1;
+  const distScale = 0.19;
 
   // TODO: Just like in 2D, try to use eye distance for the correct scaling
 
   useEffect(() => {
-    if (transformMatrix && nosePosition) {
+    if (transformMatrix && nosePosition && eyeDistance) {
       const m = new Matrix4().fromArray(transformMatrix);
       const position = new Vector3();
       const rotation = new Quaternion();
@@ -38,13 +44,13 @@ const GlassesModel = ({ transformMatrix, nosePosition, visible }) => {
       // Apply rotation + scale from transformMatrix
       scene.position.copy(noseWorld); // nose anchor position
       scene.quaternion.copy(rotation); // head orientation
-      //   scene.scale.copy(scale.multiplyScalar(customScale));
-      scene.scale.set(customScale, customScale, customScale);
+      const dynamicScale = (eyeDistance / distScale) * customScale;
+      scene.scale.set(dynamicScale, dynamicScale, dynamicScale);
 
       scene.updateMatrix();
       scene.matrixAutoUpdate = false;
     }
-  }, [transformMatrix, nosePosition]);
+  }, [transformMatrix, nosePosition, eyeDistance]);
 
   return <primitive object={scene} visible={visible} />;
 };

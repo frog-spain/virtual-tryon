@@ -9,6 +9,7 @@ const Demo3D = () => {
 
   const [transformMatrix, setTransformMatrix] = useState(null);
   const [nosePosition, setNosePosition] = useState(null);
+  const [eyeDistance, setEyeDistance] = useState(null);
 
   const [isMeshOn, setIsMeshOn] = useState(true);
   const [isObjectOn, setIsObjectOn] = useState(true);
@@ -72,13 +73,21 @@ const Demo3D = () => {
           }
         }
 
-        const nose = faceLandmarks[168];
+        const nose = faceLandmarks[197];
         const faceLandmarkNosePosition = {
           x: nose.x,
           y: nose.y,
           z: nose.z,
         };
         setNosePosition(faceLandmarkNosePosition);
+
+        const leftOuter = faceLandmarks[33];
+        const rightOuter = faceLandmarks[263];
+        const dx = leftOuter.x - rightOuter.x;
+        const dy = leftOuter.y - rightOuter.y;
+        const eyeDist = Math.sqrt(dx * dx + dy * dy);
+
+        setEyeDistance(eyeDist);
 
         const matrix = result.facialTransformationMatrixes?.[0];
 
@@ -139,6 +148,7 @@ const Demo3D = () => {
             transformMatrix={transformMatrix}
             nosePosition={nosePosition}
             objectToRender={objects[currentObjectIdx]}
+            eyeDistance={eyeDistance}
           />
         )}
       </div>

@@ -5,7 +5,12 @@ import GlassesModel from './models/GlassesModel';
 import HelmetModel from './models/HelmetModel';
 import HatModel from './models/HatModel';
 
-export default function ({ transformMatrix, nosePosition, objectToRender }) {
+export default function ({
+  transformMatrix,
+  nosePosition,
+  eyeDistance,
+  objectToRender,
+}) {
   return (
     <Canvas
       style={{
@@ -14,8 +19,7 @@ export default function ({ transformMatrix, nosePosition, objectToRender }) {
         left: 0,
         borderRadius: 12,
         transform: 'scaleX(-1)',
-      }}
-    >
+      }}>
       <ambientLight intensity={2.5} />
       <directionalLight position={[0, 0, 5]} intensity={5.5} />
 
@@ -24,6 +28,7 @@ export default function ({ transformMatrix, nosePosition, objectToRender }) {
         <GlassesModel
           visible={objectToRender === 'glasses'}
           nosePosition={nosePosition}
+          eyeDistance={eyeDistance}
           transformMatrix={transformMatrix}
         />
 
