@@ -1,7 +1,7 @@
 const OptionButton = ({ label, onClick, isActive }) => {
   return (
     <button
-      className={`option-button ${isActive && 'active'}`}
+      className={`option-button ${isActive && "active"}`}
       onClick={onClick}
     >
       {label}

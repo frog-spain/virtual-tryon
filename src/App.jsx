@@ -1,11 +1,11 @@
-import { lazy } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { lazy } from "react";
+import { Routes, Route } from "react-router-dom";
 
-const Home = lazy(() => import('./pages/Home.jsx'));
-const ModelViewerPage = lazy(() => import('./pages/ModelViewerPage'));
-const MediaPipe2DPage = lazy(() => import('./pages/MediaPipe2DPage'));
-const MediaPipe3DPage = lazy(() => import('./pages/MediaPipe3DPage'));
-const ProductDemoPage = lazy(() => import('./pages/ProductDemoPage'));
+const Home = lazy(() => import("./pages/Home.jsx"));
+const ModelViewerPage = lazy(() => import("./pages/ModelViewerPage"));
+const MediaPipe2DPage = lazy(() => import("./pages/MediaPipe2DPage"));
+const MediaPipe3DPage = lazy(() => import("./pages/MediaPipe3DPage"));
+const ProductDemoPage = lazy(() => import("./pages/ProductDemoPage"));
 
 function App() {
   return (

@@ -1,7 +1,7 @@
-import { useEffect, useRef, useState } from 'react';
-import { getFaceLandmarker } from '../../lib/mediapipe';
-import ThreeScene from './ThreeScene';
-import OptionButton from '../ui/OptionButton';
+import { useEffect, useRef, useState } from "react";
+import { getFaceLandmarker } from "../../lib/mediapipe";
+import ThreeScene from "./ThreeScene";
+import OptionButton from "../ui/OptionButton";
 
 const Demo3D = () => {
   const videoRef = useRef(null);
@@ -14,7 +14,7 @@ const Demo3D = () => {
   const [isMeshOn, setIsMeshOn] = useState(true);
   const [isObjectOn, setIsObjectOn] = useState(true);
 
-  const objects = ['glasses', 'helmet', 'hat'];
+  const objects = ["glasses", "helmet", "hat"];
   const [currentObjectIdx, setCurrentObjectIdx] = useState(0);
 
   const clickNext = () => {
@@ -48,20 +48,20 @@ const Demo3D = () => {
 
         const result = landmarker.detectForVideo(
           videoRef.current,
-          performance.now()
+          performance.now(),
         );
 
         const faceLandmarks = result.faceLandmarks?.[0]; // array of 468 normalized points
 
         if (isMeshOn && faceLandmarks) {
-          const ctx = canvasRef.current.getContext('2d');
+          const ctx = canvasRef.current.getContext("2d");
           ctx.clearRect(
             0,
             0,
             canvasRef.current.width,
-            canvasRef.current.height
+            canvasRef.current.height,
           );
-          ctx.strokeStyle = 'lime';
+          ctx.strokeStyle = "lime";
           ctx.lineWidth = 1;
 
           for (const point of faceLandmarks) {
@@ -109,12 +109,12 @@ const Demo3D = () => {
     <div className="demo-wrapper">
       <ul className="options-list">
         <OptionButton
-          label={`Mesh ${isMeshOn ? 'ON' : 'OFF'}`}
+          label={`Mesh ${isMeshOn ? "ON" : "OFF"}`}
           onClick={() => setIsMeshOn(!isMeshOn)}
           isActive={isMeshOn}
         />
         <OptionButton
-          label={`Object ${isObjectOn ? 'ON' : 'OFF'}`}
+          label={`Object ${isObjectOn ? "ON" : "OFF"}`}
           onClick={() => setIsObjectOn(!isObjectOn)}
           isActive={isObjectOn}
         />
@@ -129,7 +129,7 @@ const Demo3D = () => {
           ref={videoRef}
           style={{
             borderRadius: 12,
-            transform: 'scaleX(-1)',
+            transform: "scaleX(-1)",
           }}
         />
 
@@ -139,7 +139,7 @@ const Demo3D = () => {
           width={videoRef.current?.videoWidth}
           height={videoRef.current?.videoHeight}
           className="position-absolute"
-          style={{ display: `${isMeshOn ? 'inherit' : 'none'}` }}
+          style={{ display: `${isMeshOn ? "inherit" : "none"}` }}
         />
 
         {/* Theejs Object */}

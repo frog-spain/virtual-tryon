@@ -1,9 +1,9 @@
-import { useEffect } from 'react';
-import { useGLTF } from '@react-three/drei';
-import { Matrix4, Vector3, Quaternion } from 'three';
+import { useEffect } from "react";
+import { useGLTF } from "@react-three/drei";
+import { Matrix4, Vector3, Quaternion } from "three";
 
 const HatModel = ({ transformMatrix, visible }) => {
-  const { scene } = useGLTF('/assets/models/hat2.glb');
+  const { scene } = useGLTF("/assets/models/hat2.glb");
   const customScale = 13;
 
   useEffect(() => {
@@ -27,13 +27,13 @@ const HatModel = ({ transformMatrix, visible }) => {
       // Adjust the model: turn 90° around Y
       const extraRotation = new Quaternion().setFromAxisAngle(
         new Vector3(0, 1, 0), // axis: Y (up in head space)
-        Math.PI / 2 // 90 degrees
+        Math.PI / 2, // 90 degrees
       );
 
       // Tilt forward/backward around X
       const tilt = new Quaternion().setFromAxisAngle(
         new Vector3(1, 0, 0),
-        Math.PI / 10
+        Math.PI / 10,
       );
 
       // Combine

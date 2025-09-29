@@ -1,9 +1,9 @@
-import { useEffect } from 'react';
-import { useGLTF } from '@react-three/drei';
-import { Matrix4, Vector3, Quaternion } from 'three';
+import { useEffect } from "react";
+import { useGLTF } from "@react-three/drei";
+import { Matrix4, Vector3, Quaternion } from "three";
 
 const HelmetModel = ({ transformMatrix, visible }) => {
-  const { scene } = useGLTF('/assets/models/helmet.glb');
+  const { scene } = useGLTF("/assets/models/helmet.glb");
   const customScale = 7.4;
 
   useEffect(() => {

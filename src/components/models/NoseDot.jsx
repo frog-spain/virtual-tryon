@@ -1,5 +1,5 @@
-import { useThree } from '@react-three/fiber';
-import { Vector3 } from 'three';
+import { useThree } from "@react-three/fiber";
+import { Vector3 } from "three";
 
 function NoseDot({ nosePosition }) {
   const { camera } = useThree();
@@ -28,7 +28,7 @@ function NoseDot({ nosePosition }) {
 
   // 4. Camera space → world space
   const worldPos = new Vector3(worldX, worldY, worldZ).applyMatrix4(
-    camera.matrixWorld
+    camera.matrixWorld,
   );
 
   return (

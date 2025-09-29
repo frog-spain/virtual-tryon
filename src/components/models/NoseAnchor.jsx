@@ -1,7 +1,7 @@
 // in GlassesScene.jsx
-import { useRef } from 'react';
-import { useThree, useFrame } from '@react-three/fiber';
-import { Vector3 } from 'three';
+import { useRef } from "react";
+import { useThree, useFrame } from "@react-three/fiber";
+import { Vector3 } from "three";
 
 export default function NoseAnchor({ nosePosition, children }) {
   const { camera } = useThree();
@@ -26,7 +26,7 @@ export default function NoseAnchor({ nosePosition, children }) {
 
     // to world space
     const worldPos = new Vector3(camX, camY, camZ).applyMatrix4(
-      camera.matrixWorld
+      camera.matrixWorld,
     );
     ref.current.position.copy(worldPos);
   });

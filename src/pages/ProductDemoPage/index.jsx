@@ -1,6 +1,6 @@
-import BackButton from '../../ui/BackButton';
-import { productList } from './products-list';
-import ProductCard from './ProductCard';
+import BackButton from "../../ui/BackButton";
+import { productList } from "./products-list";
+import ProductCard from "./ProductCard";
 
 const ProductDemoPage = () => {
   return (

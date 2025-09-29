@@ -1,7 +1,7 @@
-import { useEffect } from 'react';
-import { useThree } from '@react-three/fiber';
-import { useGLTF } from '@react-three/drei';
-import { Matrix4, Vector3, Quaternion } from 'three';
+import { useEffect } from "react";
+import { useThree } from "@react-three/fiber";
+import { useGLTF } from "@react-three/drei";
+import { Matrix4, Vector3, Quaternion } from "three";
 
 const GlassesModel = ({
   transformMatrix,
@@ -9,7 +9,7 @@ const GlassesModel = ({
   eyeDistance,
   visible,
 }) => {
-  const { scene } = useGLTF('/assets/models/glasses.glb');
+  const { scene } = useGLTF("/assets/models/glasses.glb");
   const { camera } = useThree();
   const customScale = 2.1;
   const distScale = 0.19;
@@ -36,7 +36,7 @@ const GlassesModel = ({
       const camZ = -depth;
 
       const noseWorld = new Vector3(camX, camY, camZ).applyMatrix4(
-        camera.matrixWorld
+        camera.matrixWorld,
       );
 
       // Apply rotation + scale from transformMatrix

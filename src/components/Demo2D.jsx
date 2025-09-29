@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState } from 'react';
-import { getFaceLandmarker } from '../../lib/mediapipe';
+import { useEffect, useRef, useState } from "react";
+import { getFaceLandmarker } from "../../lib/mediapipe";
 
 export default function Demo2D() {
   const videoRef = useRef(null);
@@ -13,8 +13,8 @@ export default function Demo2D() {
     const i = new Image();
 
     i.src = new URL(
-      '/assets/mediapipe/black-glasses.webp',
-      import.meta.url
+      "/assets/mediapipe/black-glasses.webp",
+      import.meta.url,
     ).href;
 
     i.onload = () => setImg(i);
@@ -29,7 +29,7 @@ export default function Demo2D() {
       try {
         stream = await navigator.mediaDevices.getUserMedia({
           video: {
-            facingMode: 'user', // selfie
+            facingMode: "user", // selfie
           },
           audio: false,
         });
@@ -38,7 +38,7 @@ export default function Demo2D() {
         await videoRef.current.play();
         setReady(true);
       } catch (err) {
-        console.error('Camera error:', err);
+        console.error("Camera error:", err);
       }
     })();
 
@@ -78,7 +78,7 @@ export default function Demo2D() {
         canvas.height = vh;
       }
 
-      const ctx = canvas.getContext('2d');
+      const ctx = canvas.getContext("2d");
       ctx.clearRect(0, 0, vw, vh);
 
       // Phase D: Run detection for current frame
@@ -104,14 +104,14 @@ export default function Demo2D() {
 
   //   Main return
   return (
-    <div style={{ position: 'relative' }}>
+    <div style={{ position: "relative" }}>
       <video
         ref={videoRef}
         playsInline
         muted
         style={{
           borderRadius: 12,
-          transform: 'scaleX(-1)',
+          transform: "scaleX(-1)",
         }}
       />
       <canvas ref={canvasRef} className="position-absolute" />
