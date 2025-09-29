@@ -14,8 +14,6 @@ const GlassesModel = ({
   const customScale = 2.1;
   const distScale = 0.19;
 
-  // TODO: Just like in 2D, try to use eye distance for the correct scaling
-
   useEffect(() => {
     if (transformMatrix && nosePosition && eyeDistance) {
       const m = new Matrix4().fromArray(transformMatrix);
