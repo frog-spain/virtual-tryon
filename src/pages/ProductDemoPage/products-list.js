@@ -12,4 +12,21 @@ const helmet = {
   price: 31550,
 };
 
-export const productList = [glasses, helmet];
+const dummyProduct = {
+  title: "Helmet",
+  description:
+    "Descubre el estilo icónico de Helmet, un par de gafas de sol que nunca pasan de moda. Con una montura de color negro hecha de resistente nylon, estos lentes ofrecen una combinación perfecta de durabilidad y elegancia. Las lentes de color verde están fabricadas con vidrio, garantizando una visión clara y una protección óptima contra los rayos solares.",
+  price: 31550,
+  isDummy: true,
+};
+
+export const productList = [
+  glasses,
+  helmet,
+  dummyProduct,
+  dummyProduct,
+  dummyProduct,
+  dummyProduct,
+  dummyProduct,
+  dummyProduct,
+];

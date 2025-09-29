@@ -1,9 +1,13 @@
-const ProductCard = ({ title }) => {
+import { Link } from "react-router-dom";
+
+const ProductCard = ({ title, price, isDummy, slug }) => {
   return (
-    <div class="product-card-wrapper">
-      {title}
-      {price}
-    </div>
+    <Link to={`/product-demo/products/${slug}`} className="product-card-link">
+      <div class={`product-card-wrapper` + (isDummy ? " dummy" : "")}>
+        {title}
+        {price}
+      </div>
+    </Link>
   );
 };
 
