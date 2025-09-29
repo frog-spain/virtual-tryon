@@ -1,5 +1,5 @@
-import BackButton from '../ui/BackButton';
-import Demo3D from '../components/Demo3D';
+import BackButton from "../ui/BackButton";
+import Demo3D from "../components/Demo3D";
 
 export default function MediaPipePage() {
   return (
@@ -8,7 +8,9 @@ export default function MediaPipePage() {
 
       <div className="demo">
         <h1>MediaPipe – 3D Glasses</h1>
-        <p>Face tracking demo using MediaPipe Tasks (Face Landmarker).</p>
+        <p style={{ marginBottom: 24 }}>
+          Face tracking demo using MediaPipe Tasks (Face Landmarker).
+        </p>
         <Demo3D />
       </div>
     </div>
