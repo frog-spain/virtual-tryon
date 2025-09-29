@@ -1,8 +1,17 @@
 :root {
-  font-family: monospace;
+  --primary-color: #6145ff;
+  --lighter-color: #f370ff;
+  --cream-color: #f0f0f0;
+  --gradient: linear-gradient(
+    350deg,
+    var(--primary-color) 6.96%,
+    var(--lighter-color) 107.25%
+  );
+
+  font-family: "Lexend Deca", sans-serif;
   font-weight: 400;
   color: rgb(47, 47, 47);
-  background-color: #f0f0f0;
+  background-color: var(--cream-color);
 }
 
 * {
@@ -18,8 +27,7 @@ body {
 }
 
 h1 {
-  font-family: monospace;
-  color: #756a61;
+  color: var(--primary-color);
   font-size: 3.2em;
   line-height: 1.1;
   text-align: center;
@@ -43,20 +51,20 @@ h1 {
 .back-button {
   align-self: flex-start;
 
-  color: #756a61;
+  color: var(--primary-color);
   text-decoration: none;
 
   &:hover {
-    color: #5c4b45;
+    color: var(--primary-color);
   }
 }
 
 .option-button.active {
-  background-color: #5c4b45;
+  background-color: var(--primary-color);
 }
 
 .hotspot {
-  background-color: #f0f0f0;
+  background-color: var(--cream-color);
   padding: 4px 8px;
   border-radius: 4px;
 }
@@ -82,19 +90,18 @@ model-viewer {
 
 .option-button {
   padding: 10px 20px;
-  background-color: #a79588;
+  background: var(--primary-color);
   border: none;
   border-radius: 5px;
 
   color: white;
-  font-family: monospace;
   text-decoration: none;
 
   transition: all 0.3s ease;
   cursor: pointer;
 
   &:hover {
-    background-color: #8f7f72;
+    background: var(--lighter-color);
   }
 }
 
