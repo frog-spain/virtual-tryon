@@ -26,7 +26,7 @@ export default function NoseAnchor({ nosePosition, children }) {
 
     // to world space
     const worldPos = new Vector3(camX, camY, camZ).applyMatrix4(
-      camera.matrixWorld,
+      camera.matrixWorld
     );
     ref.current.position.copy(worldPos);
   });

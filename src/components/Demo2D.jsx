@@ -14,7 +14,7 @@ export default function Demo2D() {
 
     i.src = new URL(
       "/assets/mediapipe/black-glasses.webp",
-      import.meta.url,
+      import.meta.url
     ).href;
 
     i.onload = () => setImg(i);
@@ -44,7 +44,7 @@ export default function Demo2D() {
 
     return () => {
       cancelled = true;
-      if (stream) stream.getTracks().forEach((t) => t.stop());
+      if (stream) stream.getTracks().forEach(t => t.stop());
     };
   }, []);
 
@@ -129,7 +129,7 @@ export default function Demo2D() {
  */
 function drawGlasses(ctx, face, img, w, h) {
   // Helper to convert normalized landmark to pixel coords
-  const px = (i) => ({ x: face[i].x * w, y: face[i].y * h });
+  const px = i => ({ x: face[i].x * w, y: face[i].y * h });
 
   const leftOuter = px(33); //   33  -> left eye outer corner
   const rightOuter = px(263); //   263 -> right eye outer corner

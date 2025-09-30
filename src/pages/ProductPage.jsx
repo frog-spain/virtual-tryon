@@ -6,7 +6,7 @@ import OptionButton from "../ui/OptionButton";
 
 const ProductPage = () => {
   const { slug } = useParams();
-  const product = productList.find((p) => slugify(p.title) === slug);
+  const product = productList.find(p => slugify(p.title) === slug);
 
   if (!product) {
     return (
