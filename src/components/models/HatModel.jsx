@@ -27,13 +27,13 @@ const HatModel = ({ transformMatrix, visible }) => {
       // Adjust the model: turn 90° around Y
       const extraRotation = new Quaternion().setFromAxisAngle(
         new Vector3(0, 1, 0), // axis: Y (up in head space)
-        Math.PI / 2, // 90 degrees
+        Math.PI / 2 // 90 degrees
       );
 
       // Tilt forward/backward around X
       const tilt = new Quaternion().setFromAxisAngle(
         new Vector3(1, 0, 0),
-        Math.PI / 10,
+        Math.PI / 10
       );
 
       // Combine

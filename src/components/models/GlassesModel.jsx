@@ -36,7 +36,7 @@ const GlassesModel = ({
       const camZ = -depth;
 
       const noseWorld = new Vector3(camX, camY, camZ).applyMatrix4(
-        camera.matrixWorld,
+        camera.matrixWorld
       );
 
       // Apply rotation + scale from transformMatrix

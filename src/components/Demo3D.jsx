@@ -48,7 +48,7 @@ const Demo3D = () => {
 
         const result = landmarker.detectForVideo(
           videoRef.current,
-          performance.now(),
+          performance.now()
         );
 
         const faceLandmarks = result.faceLandmarks?.[0]; // array of 468 normalized points
@@ -59,7 +59,7 @@ const Demo3D = () => {
             0,
             0,
             canvasRef.current.width,
-            canvasRef.current.height,
+            canvasRef.current.height
           );
           ctx.strokeStyle = "lime";
           ctx.lineWidth = 1;
@@ -101,7 +101,7 @@ const Demo3D = () => {
 
     return () => {
       cancelled = true;
-      if (stream) stream.getTracks().forEach((t) => t.stop());
+      if (stream) stream.getTracks().forEach(t => t.stop());
     };
   }, []);
 

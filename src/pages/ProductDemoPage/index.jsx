@@ -13,7 +13,7 @@ const ProductDemoPage = () => {
         <h1 style={{ marginBottom: 40 }}>3D Marketplace Demo</h1>
 
         <div className="product-cards-grid">
-          {productList.map((product) => {
+          {productList.map(product => {
             const slug = slugify(product.title);
             return (
               <ProductCard
