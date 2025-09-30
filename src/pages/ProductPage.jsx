@@ -27,12 +27,19 @@ const ProductPage = () => {
       <div className="product-wapper">
         {/* Image */}
         <div className="product-image-wrapper">
-          <OptionButton
-            label="Live Try On"
-            icon={<HiVideoCamera />}
-            isRounded
-            className="try-on-button"
-          />
+          {product.action.label && (
+            <OptionButton
+              label={product.action.label}
+              icon={<HiVideoCamera />}
+              isRounded
+              className="try-on-button"
+              onClick={() =>
+                alert(
+                  `${product.action.label} clicked! This logic soon to be configured!`
+                )
+              }
+            />
+          )}
           <div className="product-image">
             <img src="/assets/images/image.png" />
           </div>
@@ -43,7 +50,10 @@ const ProductPage = () => {
           <h2>{product.title}</h2>
 
           <div style={{ display: "flex", flexDirection: "column", gap: 5 }}>
-            <OptionButton label="Add to cart" />
+            <OptionButton
+              label="Add to cart"
+              onClick={() => alert("Product added to cart!")}
+            />
             <span style={{ fontSize: 12, fontWeight: 200, color: "#7b7b7bff" }}>
               Delivery in 4-6 working days | Free returns and exchanges
             </span>
