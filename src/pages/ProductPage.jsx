@@ -2,7 +2,9 @@ import { useParams, Link } from "react-router-dom";
 import { productList } from "./ProductDemoPage/products-list";
 import { slugify } from "../utils/slugify";
 import { formatPrice } from "../utils/formatPrice";
+
 import OptionButton from "../ui/OptionButton";
+import { HiVideoCamera } from "react-icons/hi2";
 
 const ProductPage = () => {
   const { slug } = useParams();
@@ -23,9 +25,20 @@ const ProductPage = () => {
         ← Back to products
       </Link>
       <div className="product-wapper">
-        <div className="product-image">
-          <img src="/assets/images/image.png" />
+        {/* Image */}
+        <div className="product-image-wrapper">
+          <OptionButton
+            label="Live Try On"
+            icon={<HiVideoCamera />}
+            isRounded
+            className="try-on-button"
+          />
+          <div className="product-image">
+            <img src="/assets/images/image.png" />
+          </div>
         </div>
+
+        {/* Details */}
         <div className="product-details">
           <h2>{product.title}</h2>
 
