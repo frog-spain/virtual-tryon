@@ -7,10 +7,10 @@ const ProductCard = ({ title, price, isDummy, slug }) => {
         <div>
           <img src="/assets/images/image.png" />
         </div>
-        <div>
+        <footer>
           <h2 className="product-title">{title}</h2>
           <span className="product-price"> {price}</span>
-        </div>
+        </footer>
       </div>
     </Link>
   );

@@ -1,6 +1,8 @@
 import { useParams, Link } from "react-router-dom";
 import { productList } from "./ProductDemoPage/products-list";
 import { slugify } from "../utils/slugify";
+import { formatPrice } from "../utils/formatPrice";
+import OptionButton from "../ui/OptionButton";
 
 const ProductPage = () => {
   const { slug } = useParams();
@@ -20,10 +22,24 @@ const ProductPage = () => {
       <Link to="/product-demo" className="back-button">
         ← Back to products
       </Link>
+      <div className="product-wapper">
+        <div className="product-image">
+          <img src="/assets/images/image.png" />
+        </div>
+        <div className="product-details">
+          <h2>{product.title}</h2>
 
-      <h1>{product.title}</h1>
-      <p>{product.price}</p>
-      {/* shared layout + product details / 3D viewer component go here */}
+          <div style={{ display: "flex", flexDirection: "column", gap: 5 }}>
+            <OptionButton label="Add to cart" />
+            <span style={{ fontSize: 12, fontWeight: 200, color: "#7b7b7bff" }}>
+              Delivery in 4-6 working days | Free returns and exchanges
+            </span>
+          </div>
+
+          <p>{formatPrice(product.price)}</p>
+          <p style={{ fontWeight: 200 }}>{product.description}</p>
+        </div>
+      </div>
     </div>
   );
 };
