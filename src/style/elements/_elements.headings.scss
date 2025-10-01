@@ -1,0 +1,60 @@
+:root {
+  // Headings
+  --headings-font-family: var(--font-family-secondary);
+  --headings-font-weight: var(--font-weight-bold);
+  --headings-line-height: 1.2;
+  --h1-font-size: var(--font-xxxxl);
+  --h2-font-size: var(--font-xxxl);
+  --h3-font-size: var(--font-xxl);
+  --h4-font-size: var(--font-xl);
+  --h5-font-size: var(--font-lg);
+  --h6-font-size: var(--font-size-base);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: var(--font-size-base);
+  font-family: var(--headings-font-family);
+  line-height: var(--headings-line-height);
+  font-weight: var(--headings-font-weight);
+  margin: 0;
+  padding: 0;
+
+  @include lhCrop(var(--headings-line-height));
+}
+
+h1 {
+  font-size: var(--h1-font-size);
+}
+
+h2 {
+  font-size: var(--h2-font-size);
+}
+
+h3 {
+  font-size: var(--h3-font-size);
+}
+
+h4 {
+  font-size: var(--h4-font-size);
+}
+
+h5 {
+  font-size: var(--h5-font-size);
+}
+
+h6 {
+  font-size: var(--h6-font-size);
+}
+
+h1 {
+  margin-bottom: 10px;
+  color: var(--color-primary);
+  font-size: 3.2rem;
+  line-height: 1.1;
+  text-align: center;
+}

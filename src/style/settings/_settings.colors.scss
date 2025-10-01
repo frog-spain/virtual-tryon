@@ -1,0 +1,23 @@
+$colors-map: () !default;
+
+// Grayscale
+@include add-color(--color-white, #fff, true);
+@include add-color(--color-gray-100, #f0f0f0);
+@include add-color(--color-gray-200, #e9ecef);
+@include add-color(--color-gray-300, #dee2e6);
+@include add-color(--color-gray-400, #ced4da);
+@include add-color(--color-gray-500, #adb5bd);
+@include add-color(--color-gray-600, #6c757d);
+@include add-color(--color-gray-700, #495057);
+@include add-color(--color-gray-800, #343a40);
+@include add-color(--color-gray-900, #212529);
+@include add-color(--color-black, #000, true);
+
+// Theme colors
+@include add-color(--color-primary, #6145ff, true);
+@include add-color(--color-secondary, #f370ff, true);
+// Feedback colors
+@include add-color(--color-success, #C5E99B, true);
+@include add-color(--color-error, #dd4952, true);
+@include add-color(--color-warning, #ffc107, true);
+@include add-color(--color-info, #00a6e9, true);

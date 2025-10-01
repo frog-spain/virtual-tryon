@@ -1,0 +1,29 @@
+:root {
+  // Wrapper
+  --wrapper-size: 1200px;
+  // Border variables
+  --border-width: 1px;
+  --border-color: var(--color-gray-300);
+  --border-default: 40px;
+  --border-tiny: 3px;
+  --border-round: 50%;
+  // Letter spacing variables
+  --letter-spacing-default: 1px;
+  --letter-spacing-xl: 2px;
+  --letter-spacing-sm: 0.3px;
+  --letter-spacing-xs: -0.5px;
+  --letter-spacing-xxs: -2px;
+  // Transition variables
+  --transition-base: all 0.2s ease-in-out;
+  --transition-fade: opacity 0.15s linear;
+  --transition-collapse: height 0.35s ease;
+  // Depth variables
+  --zindex-background: -1;
+  --zindex-normal: 1;
+  --zindex-header: 2;
+  --zindex-popover: 4;
+  --zindex-fixed-element: 5;
+  --zindex-overlay: 10;
+  --zindex-overlay-above: 11;
+  --zindex-mars: 999;
+}

@@ -1,0 +1,47 @@
+// ==========================================================================
+//    Font mixins
+// ==========================================================================
+
+// Especifica en una sola línea todas las reglas referentes a una fuente
+@mixin font($font-size: var(--font-size-base), $font-family: var(--font-family-primary), $color: inherit, $font-weight: var(--font-weight-base), $line-height: var(--font-line-height-base)) {
+  color: $color;
+  font-size: $font-size;
+  font-family: $font-family;
+  font-weight: $font-weight;
+  line-height: $line-height;
+}
+
+// Trunca un texto y añade elipsis si supera el ancho de su contenedor
+@mixin text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// Optimiza el renderizado de la tipografía
+@mixin text-rendering-antialiased {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+  -webkit-tap-highlight-color: transparent;
+  text-decoration: none;
+}
+
+// Convierte a em el valor en pixeles que le pases
+@function em($pixels, $context: 16px) {
+  @return #{$pixels/$context}em;
+}
+
+// Añade una web font en todos sus formatos
+@mixin fontFace($family, $src, $style: normal, $weight: normal) {
+  @font-face {
+    font-family: $family;
+    src: url('#{$src}.eot');
+    src: url('#{$src}.eot?#iefix') format('embedded-opentype'), url('#{$src}.woff') format('woff'), url('#{$src}.ttf') format('truetype');
+    font-style: $style;
+    font-weight: $weight;
+    font-display: swap;
+  }
+}

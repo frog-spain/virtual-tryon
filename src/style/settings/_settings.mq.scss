@@ -1,0 +1,40 @@
+// Media queries
+
+$breakpoints: (
+  "desktop-wide": 1440px,
+  "desktop": 1248px,
+  "tablet-wide": 1024px,
+  "tablet": 768px,
+  "tablet-small": 640px,
+  "phablet": 560px,
+  "mobile-wide": 480px,
+  "mobile": 400px
+) !default;
+
+@mixin mq($width, $type: max) {
+  @if map_has_key($breakpoints, $width) {
+    $width: map_get($breakpoints, $width);
+  }
+
+  @media only screen and (#{$type}-width: $width) {
+    @content;
+  }
+}
+
+$breakpoints_vertical: (
+  "mobile": 500px,
+  "laptop": 768px
+);
+
+@mixin mq-h($height, $type: max) {
+  @if map_has_key($breakpoints_vertical, $height) {
+    $height: map_get($breakpoints_vertical, $height);
+    @if $type == max {
+      $height: $height - 1px;
+    }
+  }
+
+  @media only screen and (#{$type}-height: $height) {
+    @content;
+  }
+}

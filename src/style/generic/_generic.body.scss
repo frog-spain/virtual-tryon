@@ -1,0 +1,21 @@
+:root {
+  --body-bg-color: var(--color-gray-100);
+}
+
+html {
+  overflow-y: scroll;
+  min-height: 100%;
+}
+
+body {
+  background-color: var(--body-bg-color);
+  color: var(--font-color-primary);
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-base);
+  line-height: var(--font-line-height-base);
+  margin: 0 !important;
+  position: relative;
+
+  @include text-rendering-antialiased;
+}

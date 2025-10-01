@@ -1,0 +1,15 @@
+:root {
+  // Spacing
+  --space-default: 4px;
+  --padding-default: 16px;
+  --gap-default: calc(2 * var(--space-default));
+  --space-xxxxs: calc(var(--space-default) / 4);
+  --space-xxxs: calc(var(--space-default) / 2);
+  --space-xxs: calc(var(--space-default));
+  --space-xs: calc(2 * var(--space-default));
+  --space-sm: calc(4 * var(--space-default));
+  --space-md: calc(6 * var(--space-default));
+  --space-lg: calc(12 * var(--space-default));
+  --space-xl: calc(24 * var(--space-default));
+  --space-xxl: calc(48 * var(--space-default));
+}

@@ -1,0 +1,16 @@
+img {
+  max-width: 100%;
+  font-style: italic;
+  vertical-align: middle;
+
+  @include disable-user-select;
+}
+
+img[width],
+img[height] {
+  max-width: none;
+}
+
+picture {
+  display: block;
+}

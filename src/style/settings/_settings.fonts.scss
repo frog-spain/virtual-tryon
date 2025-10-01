@@ -1,0 +1,45 @@
+// Sass font weight variables
+$font-weight-thin: 100;
+$font-weight-extralight: 200;
+$font-weight-light: 300;
+$font-weight-regular: normal;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: bold;
+$font-weight-extrabold: 800;
+$font-weight-black: 900;
+
+:root {
+  // Font color
+  --font-color-primary: rgb(47, 47, 47);
+  --font-color-secondary: var(--color-white);
+  // Font variables
+  --font-family-primary: "Lexend Deca", sans-serif;
+  --font-family-secondary: "Lexend Deca", sans-serif;
+  --font-size-base: var(--font-base);
+  --font-line-height-base: 1.5;
+  --font-weight-base: var(--font-weight-regular);
+  // Font sizes
+  --font-xxs: 10px;
+  --font-xs: 12px;
+  --font-sm: 14px;
+  --font-base: 16px;
+  --font-md: 18px;
+  --font-lg: 20px;
+  --font-xl: 24px;
+  --font-xxl: 30px;
+  --font-xxxl: 36px;
+  --font-xxxxl: 48px;
+  --font-xxxxxl: 60px;
+  --font-xxxxxxl: 72px;
+  // Font weights
+  --font-weight-thin: 100;
+  --font-weight-extralight: 200;
+  --font-weight-light: 300;
+  --font-weight-regular: normal;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: bold;
+  --font-weight-extrabold: 800;
+  --font-weight-black: 900;
+}

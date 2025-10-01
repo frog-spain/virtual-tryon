@@ -1,0 +1,48 @@
+// Transitions
+
+// Añade una transición simple
+@mixin transition($time: 0.3s, $function: ease-in-out, $property: all) {
+  -webkit-transition: $property $time $function;
+  -moz-transition: $property $time $function;
+  -o-transition: $property $time $function;
+  transition: $property $time $function;
+
+  @if ($property != all) {
+    will-change: $property;
+  }
+}
+
+// Añade multiples transiciones
+// Usage:   @include transition-multiple(padding 0.5s linear, border 0.8s linear 0.5s, transform 0.2s linear 0.5s);
+// Output:  -webkit-transition(width 0.2s, height 0.3s ease-in-out);
+//          transition(width 0.2s, height 0.3s ease-in-out);
+@mixin transition-multiple($transitions...) {
+  $unfoldedtransitions: ();
+  @each $transition in $transitions {
+    $unfoldedtransitions: append($unfoldedtransitions, unfoldtransition($transition), comma);
+  }
+  -webkit-transition: $unfoldedtransitions;
+  -moz-transition: $unfoldedtransitions;
+  -o-transition: $unfoldedtransitions;
+  transition: $unfoldedtransitions;
+}
+
+@function unfoldtransition ($transition) {
+  $property: all;
+  $duration: 0.2s;
+  $easing: null;
+  $delay: null;
+  $defaultProperties: ($property, $duration, $easing, $delay);
+
+  $unfoldedTransition: ();
+  @for $i from 1 through length($defaultProperties) {
+    $p: null;
+    @if $i <= length($transition) {
+      $p: nth($transition, $i);
+    } @else {
+      $p: nth($defaultProperties, $i);
+    }
+    $unfoldedTransition: append($unfoldedTransition, $p);
+  }
+  @return $unfoldedTransition;
+}

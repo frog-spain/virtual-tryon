@@ -1,0 +1,80 @@
+// Box sizing
+@mixin box-sizing($box-model) {
+  -webkit-box-sizing: $box-model; // Safari <= 5
+  -moz-box-sizing: $box-model; // Firefox <= 19
+  box-sizing: $box-model;
+}
+
+// Aplica un valor de opacidad entre 0 y 1
+@mixin opacity($opacity, $important: null) {
+  opacity: $opacity $important;
+  filter: alpha(opacity=$opacity * 100) $important; //IE8
+}
+
+// Deshabilita la selección de un usuario en el elemento que se aplica
+@mixin disable-user-select {
+  -webkit-user-select: none; // Chrome all / Safari all
+  -moz-user-select: none; // Firefox all
+  -ms-user-select: none; // IE 10+
+}
+
+// Permite colocar imágenes de fondo responsive
+@mixin background-size {
+  background-position: center !important;
+  -webkit-background-size: cover !important;
+  -moz-background-size: cover !important;
+  -o-background-size: cover !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+
+  @include mq(mobile) {
+    background-attachment: scroll;
+  }
+}
+
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin selection($background-color, $color: #fff) {
+  ::-moz-selection { // Code for Firefox
+    background: $background-color;
+    color: $color;
+  }
+
+  ::selection {
+    background: $background-color;
+    color: $color;
+  }
+}
+
+@mixin hover {
+  @include mq(mobile-wide, min) {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+@mixin active {
+  @include mq(mobile-wide, min) {
+    &:active,
+    &:focus {
+      @content;
+    }
+  }
+}
+
+@mixin hover-full {
+  @include mq(mobile-wide, min) {
+    &:hover,
+    &:active,
+    &:focus {
+      @content;
+    }
+  }
+}

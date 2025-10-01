@@ -1,0 +1,86 @@
+//==========================================================================
+//    Hacks mixins
+//==========================================================================
+
+// Only IE
+@mixin only-ie() {
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    @content;
+  }
+}
+
+// Only Safari
+@mixin only-safari() {
+  &:not(:root:root) {
+    @content;
+  }
+}
+
+// Only Edge
+@mixin only-edge() {
+  @supports (-ms-ime-align:auto) {
+    @content;
+  }
+}
+
+// Ellipsis Hack
+@mixin ellipsis-hack($num-lines, $line-height: var(--font-base), $important: null) {
+  display: -webkit-box $important;
+  white-space: normal $important;
+  -webkit-line-clamp: $num-lines $important;
+  -webkit-box-orient: vertical $important;
+  overflow: hidden $important;
+  line-height: $line-height;
+  max-height: calc(#{$line-height} * #{$num-lines});
+
+  @include only-ie {
+    display: block !important;
+  }
+}
+
+@mixin hide-scrollbar {
+  &::-webkit-scrollbar {
+    width: 0 !important;
+  }
+
+  & {
+    overflow: -moz-scrollbars-none;
+    -ms-overflow-style: none;
+  }
+}
+
+@mixin custom-scrollbar($width: 10px, $handleColor: var(--color-gray-600), $scrollbarBgColor: var(--color-gray-200)) {
+  overflow: hidden;
+
+  @include hover {
+    overflow-y: auto;
+    overflow-x: auto;
+  }
+
+  &::-webkit-scrollbar { // general scrollbar style
+    width: $width;
+  }
+
+  &::-webkit-scrollbar-track { // progress bar
+    background-color: $scrollbarBgColor;
+  }
+
+  &::-webkit-scrollbar-thumb { // handle
+    background-color: $handleColor;
+    border-radius: var(--border-tiny);
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: darken(get-color-from-map($handleColor), 10%);
+  }
+}
+
+@mixin lhCrop($line-height) {
+  &::before {
+    content: '';
+    display: block;
+    height: 0;
+    width: 0;
+    margin-top: calc((1 - #{$line-height}) * 0.5em);
+  }
+}

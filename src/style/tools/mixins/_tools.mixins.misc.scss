@@ -1,0 +1,183 @@
+//==========================================================================
+//    Misc mixins
+//==========================================================================
+
+// Aplica una escala de grises
+@mixin desaturate($i) {
+  @if $i == 0 {
+    filter: none;
+    -webkit-filter: grayscale(0);
+  } @else {
+    -moz-filter: grayscale($i / 100);
+    -webkit-filter: grayscale($i / 100);
+    filter: grayscale($i / 100);
+    //filter: url("assets/images/gray.svg#grayscale");
+    filter: gray; // IE6-9
+  }
+}
+
+@mixin placeholder($color, $opacity) {
+  // Style Placeholders
+  &::-moz-placeholder { // Mozilla Firefox 19+
+    color: $color !important;
+    opacity: $opacity;
+  }
+
+  &:-moz-placeholder { // Mozilla Firefox 4 to 18
+    color: $color !important;
+    opacity: $opacity;
+  }
+
+  &:-webkit-input-placeholder { // WebKit, Blink, Edge
+    color: $color !important;
+    opacity: $opacity;
+  }
+
+  &:-ms-input-placeholder { // Internet Explorer 10-11
+    color: $color !important;
+    opacity: $opacity;
+  }
+}
+
+// Aplica un box-shadow al elemento al que se le aplica
+@mixin box-shadow($top, $left, $blur, $spread, $color, $inset: false, $important: null) {
+  @if $inset {
+    -webkit-box-shadow: inset $top $left $blur $spread $color $important;
+    -moz-box-shadow: inset $top $left $blur $spread $color $important;
+    box-shadow: inset $top $left $blur $spread $color $important;
+  } @else {
+    -webkit-box-shadow: $top $left $blur $spread $color $important;
+    -moz-box-shadow: $top $left $blur $spread $color $important;
+    box-shadow: $top $left $blur $spread $color $important;
+  }
+}
+
+@mixin remove-box-shadow() {
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  box-shadow: none !important;
+}
+
+@mixin transform($transform, $important: null) {
+  -webkit-transform: $transform $important;
+  -moz-transform: $transform $important;
+  -ms-transform: $transform $important;
+  -o-transform: $transform $important;
+  transform: $transform $important;
+}
+
+@mixin placeholder-form {
+  &:-moz-placeholder {
+    @content;
+  }
+
+  &::-moz-placeholder {
+    @content;
+  }
+
+  &:-ms-input-placeholder {
+    @content;
+  }
+
+  &:-webkit-input-placeholder {
+    @content;
+  }
+}
+
+// Aplica la función calc() de CSS
+@mixin calc($property, $expression, $important: false) {
+  @if $important == true {
+    #{$property}: -webkit-calc(#{$expression}) !important;
+    #{$property}: calc(#{$expression}) !important;
+  } @else {
+    #{$property}: -webkit-calc(#{$expression});
+    #{$property}: calc(#{$expression});
+  }
+}
+
+// Añade la propiedad object-fit a una imagen
+@mixin object-fit {
+  @supports (object-fit: cover) {
+    object-fit: cover;
+    object-position: center;
+    height: 100%;
+    width: 100%;
+  }
+
+  @supports (object-fit: cover) and (-ms-ime-align:auto) {
+    // fix issue on Edge - object-fit not working for video elements
+    height: auto;
+    width: auto;
+  }
+}
+
+// Añade la propiedad width max content
+@mixin width-max-content {
+  width: -moz-max-content;
+  width: -webkit-max-content;
+  width: -o-max-content;
+  width: -ms-max-content;
+  width: max-content;
+}
+
+// Crea una altura 100vh real
+@mixin real-100vh {
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
+}
+
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+
+  &::before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: ($height / $width) * 100%;
+  }
+
+  > .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+@mixin reset {
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+  border-radius: 0;
+  color: inherit;
+  line-height: inherit;
+  appearance: none;
+
+  @include remove-box-shadow;
+}
+
+@mixin placeholder-form {
+  &:-moz-placeholder {
+    @content;
+  }
+
+  &::-moz-placeholder {
+    @content;
+  }
+
+  &::-ms-input-placeholder {
+    @content;
+  }
+
+  &::-webkit-input-placeholder {
+    @content;
+  }
+}
+
+@mixin add-overlay($bg-color: rgba(0, 0, 0, 0.5), $zindex: var(--zindex-normal)) {
+  background-color: $bg-color;
+  z-index: $zindex;
+
+  @include position-absolute-full;
+}

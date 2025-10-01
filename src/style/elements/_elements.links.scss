@@ -1,0 +1,20 @@
+:root {
+  --link-decoration: none;
+  --link-hover-decoration: none;
+  --link-color: var(--color-primary);
+  --link-hover-color: var(--color-primary-600);
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: var(--link-decoration);
+
+  @include transition;
+
+  @include hover-full {
+    color: var(--link-hover-color);
+    text-decoration: var(--link-hover-decoration);
+
+    @include transition;
+  }
+}
