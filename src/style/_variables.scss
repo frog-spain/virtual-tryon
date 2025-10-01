@@ -1,0 +1,14 @@
+// Color palette
+$primary-color: #6145ff !default;
+$accent-color: #f370ff !default;
+$background-color: #f0f0f0 !default;
+$text-color: rgb(47, 47, 47) !default;
+
+$gradient: linear-gradient(
+  350deg,
+  $primary-color 6.96%,
+  $accent-color 107.25%
+) !default;
+
+/* Typography */
+$primary-font-family: "Lexend Deca", sans-serif !default;

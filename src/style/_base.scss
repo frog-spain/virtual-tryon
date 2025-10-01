@@ -1,0 +1,55 @@
+@use "variables" as *;
+
+body {
+  margin: 0;
+  min-width: 100vw;
+  min-height: 100vh;
+
+  font-family: $primary-font-family;
+}
+
+// Buttons
+.back-button {
+  align-self: flex-start;
+
+  color: $primary-color;
+  text-decoration: none;
+
+  &:hover {
+    color: $accent-color;
+  }
+}
+
+.option-button {
+  padding: 10px 20px;
+  background: $primary-color;
+  border: none;
+  border-radius: 5px;
+
+  color: white;
+  text-decoration: none;
+  font-size: 15px;
+
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  box-shadow: 0 2px 10px 0 rgba(60, 52, 67, 0.4);
+
+  &:hover {
+    background: $accent-color;
+  }
+
+  &.active {
+    background-color: $accent-color;
+    box-shadow: none;
+  }
+}
+
+// Buttons list
+.options-list {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-block: 10px;
+  width: 100%;
+}

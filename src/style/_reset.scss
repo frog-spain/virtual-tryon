@@ -1,0 +1,23 @@
+@use "variables" as *;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  margin-bottom: 10px;
+  color: $primary-color;
+  font-size: 3.2rem;
+  line-height: 1.1;
+  text-align: center;
+}
+
+img {
+  width: 100%;
+}
+
+ul {
+  list-style: none;
+}

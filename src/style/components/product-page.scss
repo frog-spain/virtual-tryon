@@ -1,0 +1,23 @@
+.product-page {
+  padding: 20px;
+}
+
+.product-wapper {
+  margin: 60px auto;
+  max-width: 1000px;
+
+  display: grid;
+  grid-template-columns: 600px 1fr;
+  gap: 20px;
+}
+
+.product-image img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.product-details {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}

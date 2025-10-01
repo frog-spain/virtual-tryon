@@ -1,0 +1,14 @@
+/* Home */
+.home-main {
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.home-nav {
+  margin-block: 30px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
