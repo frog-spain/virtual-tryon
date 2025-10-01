@@ -21,6 +21,7 @@ const ProductDemoPage = () => {
                 price={product.price}
                 isDummy={product.isDummy}
                 slug={slug}
+                key={product.title}
               />
             );
           })}
