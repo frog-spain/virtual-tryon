@@ -20,6 +20,7 @@ const glasses = {
     "/assets/images/glasses-product/2.png",
     "/assets/images/glasses-product/3.png",
     "/assets/images/glasses-product/4.png",
+    "/assets/images/glasses-product/5.png",
   ],
 };
 
