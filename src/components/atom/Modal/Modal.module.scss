@@ -83,12 +83,13 @@
       height: var(--modal-close-size);
       width: var(--modal-close-size);
     }
-
+/*
     @include pixel-hover-full {
       color: white;
     }
+    */
   }
-
+/*
   @include keyframe(fadeIn) {
     from {
       opacity: 0;
@@ -98,6 +99,8 @@
     }
   }
 
+ */
+/*
   @include keyframe(showScale) {
     from {
       @include transform(scale(0.8));
@@ -106,4 +109,6 @@
       @include transform(scale(1));
     }
   }
+
+ */
 }

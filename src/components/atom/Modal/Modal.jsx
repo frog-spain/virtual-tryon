@@ -1,7 +1,7 @@
 import { useContext, useEffect } from "react";
-import { ModalContext } from "@/src/Context/ModalContext";
+import { ModalContext } from "@/context/ModalContext";
 
-import { lockBody, unlockBody } from "@/src/utils/lockBody.js";
+import { lockBody, unlockBody } from "@/utils/lockBody.js";
 
 import styles from "./Modal.module.scss";
 

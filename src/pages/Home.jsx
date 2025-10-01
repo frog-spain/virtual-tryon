@@ -26,6 +26,9 @@ export default function Home() {
             <Link to="/mediapipe-3d" className="option-button">
               MediaPipe 3D
             </Link>
+            <Link to="/modal-demo" className="option-button">
+              Modal Demo
+            </Link>
           </nav>
         </div>
       </div>
