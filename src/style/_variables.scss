@@ -12,3 +12,12 @@ $gradient: linear-gradient(
 
 /* Typography */
 $primary-font-family: "Lexend Deca", sans-serif !default;
+
+:root {
+  --primary-color: #{$primary-color};
+  --accent-color: #{$accent-color};
+  --background-color: #{$background-color};
+  --text-color: #{$text-color};
+  --gradient: #{$gradient};
+  --primary-font-family: #{$primary-font-family};
+}

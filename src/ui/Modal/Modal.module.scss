@@ -13,20 +13,29 @@
 
 .content {
   background: #fff;
-  padding: 2rem;
+  padding: 1rem;
   border-radius: 8px;
   min-width: 300px;
-  max-width: 90vw;
+  max-width: min(90vw, 1000px);
+  max-height: 90vh;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-  position: relative;
 }
 
 .closeButton {
-  position: absolute;
-  top: 0.5rem;
-  right: 0.5rem;
+  position: sticky;
+  display: block;
+  margin-left: auto;
+  top: 0;
+  right: 0;
+  width: 25px;
+  height: 25px;
+
+  font-size: 1.5rem;
+  color: var(--primary-color);
+
   border: none;
   background: none;
-  font-size: 1.2rem;
   cursor: pointer;
 }
