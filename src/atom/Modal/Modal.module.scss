@@ -1,0 +1,109 @@
+.oModal {
+  --modal-close-size: 4rem;
+  --modal-max-height: calc(var(--vh, 1vh) * 85);
+
+  //@include position-absolute-full;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  opacity: 0;
+  padding: var(--padding-default);
+  position: fixed;
+  pointer-events: none;
+  z-index: 999;
+
+  //@include animation(0.2s, fadeIn);
+
+  &__backdrop {
+    cursor: pointer;
+    pointer-events: auto;
+
+    //@include add-overlay(rgba(0, 0, 0, 0.75));
+  }
+
+  &__container {
+    align-items: center;
+    background-color: var(--color-secondary-700);
+    cursor: default;
+    display: flex;
+    justify-content: center;
+    max-height: var(--modal-max-height);
+    max-width: 1750px;
+    position: relative;
+    pointer-events: auto;
+    z-index: 10;
+
+    //@include transform(scale(0.8));
+    //@include animation(0.3s, showScale);
+
+    &_m_image {
+      > img {
+        height: auto;
+        max-height: var(--modal-max-height);
+        max-width: 100%;
+        width: auto;
+      }
+    }
+  }
+
+  &__videoContainer {
+    position: relative;
+    height: 0;
+    padding-bottom: 56.25%;
+    overflow: hidden;
+
+    iframe {
+      height: auto;
+      width: 90vw;
+      aspect-ratio: 16 / 9;
+    }
+
+    video {
+      width: 100%;
+    }
+  }
+
+  &__close {
+    background-color: rgba(0, 0, 0, 0.75);
+    border-radius: var(--border-round);
+    color: var(--color-gray-400);
+    cursor: pointer;
+    height: var(--modal-close-size);
+    position: absolute;
+    pointer-events: auto;
+    top: var(--padding-default);
+    right: var(--padding-default);
+    width: var(--modal-close-size);
+    z-index: 10;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    > svg {
+      height: var(--modal-close-size);
+      width: var(--modal-close-size);
+    }
+
+    @include pixel-hover-full {
+      color: white;
+    }
+  }
+
+  @include keyframe(fadeIn) {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @include keyframe(showScale) {
+    from {
+      @include transform(scale(0.8));
+    }
+    to {
+      @include transform(scale(1));
+    }
+  }
+}
