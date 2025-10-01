@@ -9,6 +9,10 @@ import { formatPrice } from "../utils/formatPrice";
 import OptionButton from "../ui/OptionButton";
 import { HiVideoCamera } from "react-icons/hi2";
 import Modal from "../ui/Modal";
+// Slider for multiple images
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 // Simple ErrorBoundary for the modal content to catch lazy load/render errors
 class ErrorBoundary extends React.Component {
@@ -44,15 +48,33 @@ const ProductPage = () => {
     );
   }
 
+  const sliderSettings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    adaptiveHeight: true,
+    dotsClass: "slick-dots slick-thumb",
+    customPaging: function (i) {
+      return (
+        <a>
+          <img src={`${product.imgBaseUrl}/${i + 1}.png`} />
+        </a>
+      );
+    },
+  };
+
   return (
     <>
       <div className="product-page">
         <Link to="/product-demo" className="back-button">
           ← Back to products
         </Link>
-        <div className="product-wapper">
+        <div className="product-wrapper">
           {/* Product image */}
           <div className="product-image-wrapper">
+            {/* Try on button */}
             {product.action.label && (
               <OptionButton
                 label={product.action.label}
@@ -62,8 +84,26 @@ const ProductPage = () => {
                 onClick={() => setIsModalOpen(true)}
               />
             )}
+            {/* Product image */}
             <div className="product-image">
-              <img src="/assets/images/image.png" />
+              {/* No images -> Default picture */}
+              {(!product.images || product.images.length === 0) && (
+                <img src="/assets/images/image.png" alt={product.title} />
+              )}
+              {/* One img -> Show it */}
+              {product.images?.length === 1 && (
+                <img src={product.images[0]} alt={product.title} />
+              )}
+              {/* More than one img -> Show carrousel */}
+              {product.images?.length > 1 && (
+                <Slider {...sliderSettings}>
+                  {product.images.map((src, idx) => (
+                    <div key={src} className="slick-slide-item">
+                      <img src={src} alt={`${product.title} ${idx + 1}`} />
+                    </div>
+                  ))}
+                </Slider>
+              )}
             </div>
           </div>
 
