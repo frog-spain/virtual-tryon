@@ -1,6 +1,4 @@
 // Action buttons
-// The button in the top part of the product image: try on, see in AR, configure in 3D
-// A WIP - We will add more action-related stuff soon!
 const ACTION_BUTTONS = {
   AR: { label: "See in your environment" },
   TRY_ON: { label: "Live Try On" },
@@ -15,6 +13,7 @@ const glasses = {
     "Descubre el estilo icónico de los Ray-Ban RB4340 601 Wayfarer, un par de gafas de sol que nunca pasan de moda. Con una montura de color negro hecha de resistente nylon, estos lentes ofrecen una combinación perfecta de durabilidad y elegancia. Las lentes de color verde están fabricadas con vidrio, garantizando una visión clara y una protección óptima contra los rayos solares.",
   price: 16200,
   action: ACTION_BUTTONS.TRY_ON,
+  content: () => import("../MediaPipe3DPage"),
 };
 
 const helmet = {
