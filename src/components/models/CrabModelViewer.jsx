@@ -2,6 +2,7 @@ const CrabModelViewer = ({ isAnnotationsOn, ...rest }) => {
   return (
     <>
       <model-viewer
+        class="model-viewer-test"
         camera-controls
         src="/assets/models/crab-animation.glb"
         shadow-intensity="0.92"

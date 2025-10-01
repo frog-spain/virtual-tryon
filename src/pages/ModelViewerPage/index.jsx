@@ -21,8 +21,8 @@ const MainContainer = () => {
           autoplay={isAnimationOn}
           isAnnotationsOn={isAnnotationsOn}
           auto-rotate={isAutorotateOn}
-          skybox-image={isBackgroundOn && "/assets/bg-sky.hdr"}
-          environment-image={isBackgroundOn && "/assets/bg-sky.hdr"}
+          skybox-image={isBackgroundOn && "/assets/background/bg-sky.hdr"}
+          environment-image={isBackgroundOn && "/assets/background/bg-sky.hdr"}
         />
 
         <ModelViewerOptions

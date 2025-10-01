@@ -2,7 +2,9 @@ import { useParams, Link } from "react-router-dom";
 import { productList } from "./ProductDemoPage/products-list";
 import { slugify } from "../utils/slugify";
 import { formatPrice } from "../utils/formatPrice";
+
 import OptionButton from "../ui/OptionButton";
+import { HiVideoCamera } from "react-icons/hi2";
 
 const ProductPage = () => {
   const { slug } = useParams();
@@ -23,14 +25,35 @@ const ProductPage = () => {
         ← Back to products
       </Link>
       <div className="product-wapper">
-        <div className="product-image">
-          <img src="/assets/images/image.png" />
+        {/* Image */}
+        <div className="product-image-wrapper">
+          {product.action.label && (
+            <OptionButton
+              label={product.action.label}
+              icon={<HiVideoCamera />}
+              isRounded
+              className="try-on-button"
+              onClick={() =>
+                alert(
+                  `${product.action.label} clicked! This logic soon to be configured!`
+                )
+              }
+            />
+          )}
+          <div className="product-image">
+            <img src="/assets/images/image.png" />
+          </div>
         </div>
+
+        {/* Details */}
         <div className="product-details">
           <h2>{product.title}</h2>
 
           <div style={{ display: "flex", flexDirection: "column", gap: 5 }}>
-            <OptionButton label="Add to cart" />
+            <OptionButton
+              label="Add to cart"
+              onClick={() => alert("Product added to cart!")}
+            />
             <span style={{ fontSize: 12, fontWeight: 200, color: "#7b7b7bff" }}>
               Delivery in 4-6 working days | Free returns and exchanges
             </span>

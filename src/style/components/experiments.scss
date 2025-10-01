@@ -1,0 +1,65 @@
+// Tests that we did prior to marketplace demo: 2D glasses, face mesh with 3D  and helmet, etc..
+// Feel free para proponer mejor nombre para este archivo :)
+
+@use "../variables" as *;
+
+// Layout
+.demo-container {
+  min-height: 100vh;
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.demo-wrapper {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 10px;
+}
+
+.demo {
+  margin-block: auto;
+}
+
+/* model-viewer */
+.model-viewer-test {
+  width: 700px;
+  height: min(70vh, 500px);
+
+  border: 1px solid black;
+  background: #ffffff;
+  border-radius: 20px;
+}
+
+.hotspot {
+  background-color: $background-color;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+/* MediaPipe */
+.position-absolute {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  transform: scaleX(-1); /* mirror for selfie effect */
+}
+
+.position-relative {
+  position: relative;
+}
+
+.object-controllers {
+  margin-left: auto;
+
+  display: flex;
+  gap: 10px;
+}

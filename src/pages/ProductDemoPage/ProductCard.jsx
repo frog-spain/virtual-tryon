@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { formatPrice } from "../../utils/formatPrice";
 
 const ProductCard = ({ title, price, isDummy, slug }) => {
   return (
@@ -9,7 +10,7 @@ const ProductCard = ({ title, price, isDummy, slug }) => {
         </div>
         <footer>
           <h2 className="product-title">{title}</h2>
-          <span className="product-price"> {price}</span>
+          <span className="product-price">{formatPrice(price)}</span>
         </footer>
       </div>
     </Link>
