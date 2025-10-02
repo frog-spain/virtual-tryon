@@ -75,9 +75,9 @@ const ProductPage = () => {
           {/* Product image */}
           <div className="product-image-wrapper">
             {/* Try on button */}
-            {product.action.label && (
+            {product.type.label && (
               <OptionButton
-                label={product.action.label}
+                label={product.type.label}
                 icon={<HiVideoCamera />}
                 isRounded
                 className="try-on-button"
@@ -134,7 +134,7 @@ const ProductPage = () => {
         <Modal onClose={() => setIsModalOpen(false)} open={isModalOpen}>
           <ErrorBoundary>
             <Suspense fallback={<div>Loading...</div>}>
-              <LazyContent />
+              <LazyContent {...(product.contentProps || {})} />
             </Suspense>
           </ErrorBoundary>
         </Modal>
