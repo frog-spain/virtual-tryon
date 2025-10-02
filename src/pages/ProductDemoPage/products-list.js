@@ -32,6 +32,15 @@ const helmet = {
   action: ACTION_BUTTONS.TRY_ON,
 };
 
+const jacket = {
+  title: "Jacket",
+  description: "Lorem",
+  price: 31550,
+  type: "ai",
+  action: ACTION_BUTTONS.CONFIGURE,
+  content: () => import("../../components/OutfitTryOn/OutfitTryOn.jsx"),
+};
+
 const dummyProduct = {
   title: "Helmet",
   description:
@@ -43,6 +52,7 @@ const dummyProduct = {
 export const productList = [
   glasses,
   helmet,
+  jacket,
   dummyProduct,
   dummyProduct,
   dummyProduct,

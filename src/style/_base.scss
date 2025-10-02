@@ -55,6 +55,16 @@ body {
   .icon {
     display: flex;
   }
+
+  &:disabled {
+    background: $primary-color;
+    opacity: 0.6;
+    cursor: not-allowed;
+
+    &:hover {
+      background: $primary-color;
+    }
+  }
 }
 
 // Buttons list
