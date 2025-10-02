@@ -2,13 +2,13 @@
   padding: 20px;
 }
 
-.product-wapper {
-  margin: 60px auto;
-  max-width: 1000px;
+.product-wrapper {
+  margin: 60px auto 80px;
+  max-width: min(90vw, 1100px);
 
   display: grid;
-  grid-template-columns: 600px 1fr;
-  gap: 20px;
+  grid-template-columns: 60% 1fr;
+  gap: 50px;
 }
 
 .product-image-wrapper {
@@ -28,7 +28,9 @@
 
 .try-on-button {
   position: absolute;
-  right: 0px;
-  left: 0px;
+  right: 0;
+  left: 0;
+  top: -20px;
   margin: auto;
+  z-index: 1;
 }

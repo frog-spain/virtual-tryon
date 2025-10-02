@@ -14,6 +14,14 @@ const glasses = {
   price: 16200,
   action: ACTION_BUTTONS.TRY_ON,
   content: () => import("../MediaPipe3DPage"),
+  imgBaseUrl: "/assets/images/glasses-product",
+  images: [
+    "/assets/images/glasses-product/1.png",
+    "/assets/images/glasses-product/2.png",
+    "/assets/images/glasses-product/3.png",
+    "/assets/images/glasses-product/4.png",
+    "/assets/images/glasses-product/5.png",
+  ],
 };
 
 const helmet = {
