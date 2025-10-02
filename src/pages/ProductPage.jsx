@@ -134,7 +134,7 @@ const ProductPage = () => {
         <Modal onClose={() => setIsModalOpen(false)} open={isModalOpen}>
           <ErrorBoundary>
             <Suspense fallback={<div>Loading...</div>}>
-              <LazyContent />
+              <LazyContent {...(product.contentProps || {})} />
             </Suspense>
           </ErrorBoundary>
         </Modal>

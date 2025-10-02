@@ -2,7 +2,7 @@
 const ACTION_BUTTONS = {
   AR: { label: "See in your environment" },
   TRY_ON: { label: "Live Try On" },
-  CONFIGURE: { label: "Configure in 3D" },
+  CONFIGURE_AI: { label: "Try Outfit with AI" },
 };
 
 // Products
@@ -32,12 +32,30 @@ const helmet = {
   action: ACTION_BUTTONS.TRY_ON,
 };
 
+const officeChair = {
+  title: "Office chair",
+  description: "lorem  ipsum",
+  price: 24000,
+  action: ACTION_BUTTONS.AR,
+  content: () => import("../../components/ModelViewer3D/ModelViewer3D.jsx"),
+  contentProps: {
+    model: "chair.glb",
+    variants: [
+      { name: "Default", color: "#000000" },
+      { name: "Variant 2", color: "#341c11" },
+      { name: "Variant 3", color: "#dbdcde" },
+      { name: "Variant 4", color: "#470c0b" },
+      { name: "Variant 5", color: "#2d2d2d" },
+      { name: "Variant 6", color: "#a37845" },
+    ],
+  },
+};
+
 const jacket = {
   title: "Jacket",
   description: "Lorem",
   price: 31550,
-  type: "ai",
-  action: ACTION_BUTTONS.CONFIGURE,
+  action: ACTION_BUTTONS.CONFIGURE_AI,
   content: () => import("../../components/OutfitTryOn/OutfitTryOn.jsx"),
 };
 
@@ -52,6 +70,7 @@ const dummyProduct = {
 export const productList = [
   glasses,
   helmet,
+  officeChair,
   jacket,
   dummyProduct,
   dummyProduct,
