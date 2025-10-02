@@ -75,9 +75,9 @@ const ProductPage = () => {
           {/* Product image */}
           <div className="product-image-wrapper">
             {/* Try on button */}
-            {product.type.label && (
+            {product.action.label && (
               <OptionButton
-                label={product.type.label}
+                label={product.action.label}
                 icon={<HiVideoCamera />}
                 isRounded
                 className="try-on-button"

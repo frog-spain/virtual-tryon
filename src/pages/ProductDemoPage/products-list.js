@@ -1,8 +1,8 @@
 // Action buttons
-const PRODUCT_TYPES = {
-  AR: { id: "ar", label: "See in your environment" },
-  TRY_ON: { id: "ty-on", label: "Live Try On" },
-  CONFIGURE_AI: { id: "configure-ai", label: "Configure in 3D" },
+const ACTION_BUTTONS = {
+  AR: { label: "See in your environment" },
+  TRY_ON: { label: "Live Try On" },
+  CONFIGURE_AI: { label: "Try Outfit with AI" },
 };
 
 // Products
@@ -12,7 +12,7 @@ const glasses = {
   description:
     "Descubre el estilo icónico de los Ray-Ban RB4340 601 Wayfarer, un par de gafas de sol que nunca pasan de moda. Con una montura de color negro hecha de resistente nylon, estos lentes ofrecen una combinación perfecta de durabilidad y elegancia. Las lentes de color verde están fabricadas con vidrio, garantizando una visión clara y una protección óptima contra los rayos solares.",
   price: 16200,
-  type: PRODUCT_TYPES.TRY_ON,
+  action: ACTION_BUTTONS.TRY_ON,
   content: () => import("../MediaPipe3DPage"),
   imgBaseUrl: "/assets/images/glasses-product",
   images: [
@@ -29,14 +29,14 @@ const helmet = {
   description:
     "Descubre el estilo icónico de Helmet, un par de gafas de sol que nunca pasan de moda. Con una montura de color negro hecha de resistente nylon, estos lentes ofrecen una combinación perfecta de durabilidad y elegancia. Las lentes de color verde están fabricadas con vidrio, garantizando una visión clara y una protección óptima contra los rayos solares.",
   price: 31550,
-  type: PRODUCT_TYPES.TRY_ON,
+  action: ACTION_BUTTONS.TRY_ON,
 };
 
 const officeChair = {
   title: "Office chair",
   description: "lorem  ipsum",
   price: 24000,
-  type: PRODUCT_TYPES.AR,
+  action: ACTION_BUTTONS.AR,
   content: () => import("../../components/ModelViewer3D/ModelViewer3D.jsx"),
   contentProps: {
     model: "chair.glb",
@@ -55,7 +55,7 @@ const jacket = {
   title: "Jacket",
   description: "Lorem",
   price: 31550,
-  type: PRODUCT_TYPES.CONFIGURE_AI,
+  action: ACTION_BUTTONS.CONFIGURE_AI,
   content: () => import("../../components/OutfitTryOn/OutfitTryOn.jsx"),
 };
 
