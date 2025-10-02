@@ -2,6 +2,7 @@ import { tryOnClothes } from "../../../lib/api.js";
 import { useState } from "react";
 
 import DropzoneInput from "./DropzoneInput.jsx";
+import OptionButton from "../../ui/OptionButton.jsx";
 
 import styles from "./OutfitTryOn.module.scss";
 
@@ -63,14 +64,11 @@ const OutfitTryOn = () => {
           </div>
         )}
       </div>
-
-      <button
-        className="option-button"
+      <OptionButton
         onClick={handleGenerate}
         disabled={loading}
-      >
-        {loading ? "Procesando..." : "Probar prenda"}
-      </button>
+        label={loading ? "Procesando..." : "Probar prenda"}
+      />
     </div>
   );
 };

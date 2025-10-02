@@ -6,6 +6,7 @@ const OptionButton = ({
   icon,
   style,
   className,
+  disabled,
 }) => {
   const buttonClasses = [
     "option-button",
@@ -17,7 +18,12 @@ const OptionButton = ({
     .join(" ");
 
   return (
-    <button className={buttonClasses} onClick={onClick} style={style}>
+    <button
+      className={buttonClasses}
+      onClick={onClick}
+      style={style}
+      {...(disabled && { disabled: true })}
+    >
       {label}
       {icon && <span className="icon">{icon}</span>}
     </button>
