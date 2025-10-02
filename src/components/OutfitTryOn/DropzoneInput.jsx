@@ -1,0 +1,53 @@
+import { useState } from "react";
+import styles from "./DropzoneInput.module.scss";
+
+export default function DropzoneInput({
+  label,
+  file,
+  setFile,
+  badge,
+  badgeColor,
+}) {
+  const [isDragging, setIsDragging] = useState(false);
+
+  const handleFileChange = e => {
+    const files = e.target.files || e.dataTransfer.files;
+    if (files && files[0]) {
+      setFile(files[0]);
+    }
+  };
+
+  return (
+    <div className={styles.cDropzoneInput}>
+      <p>{label}</p>
+      <label
+        className={`${styles.cDropzoneInput__dropzone} ${
+          isDragging ? styles["cDropzoneInput__dropzone--active"] : ""
+        }`}
+        onDragOver={e => e.preventDefault()}
+        onDragEnter={() => setIsDragging(true)}
+        onDragLeave={() => setIsDragging(false)}
+        onDrop={e => {
+          e.preventDefault();
+          setIsDragging(false);
+          handleFileChange(e);
+        }}
+        data-badge={badge || undefined}
+        style={badgeColor ? { "--badge-bg": badgeColor } : undefined}
+      >
+        <input
+          type="file"
+          accept="image/*"
+          onChange={handleFileChange}
+          hidden
+        />
+
+        {file ? (
+          <img src={URL.createObjectURL(file)} alt="Preview" />
+        ) : (
+          <p>Click or drag & drop</p>
+        )}
+      </label>
+    </div>
+  );
+}
