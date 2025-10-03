@@ -3,11 +3,11 @@
 }
 
 .product-wrapper {
-  margin: 60px auto 80px;
-  max-width: min(90vw, 1100px);
+  margin: 60px auto 120px;
+  max-width: min(90vw, 1000px);
 
   display: grid;
-  grid-template-columns: 60% 1fr;
+  grid-template-columns: 50% 1fr;
   gap: 50px;
 }
 

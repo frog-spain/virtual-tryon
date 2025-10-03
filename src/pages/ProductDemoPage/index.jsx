@@ -19,6 +19,7 @@ const ProductDemoPage = () => {
               <ProductCard
                 title={product.title}
                 price={product.price}
+                image={product.thumbnail}
                 isDummy={product.isDummy}
                 slug={slug}
                 key={product.title}

@@ -7,10 +7,10 @@ const ACTION_BUTTONS = {
 
 // Products
 const glasses = {
-  title: "Ray-Ban RB4340 601 Wayfarer",
-  subtitle: "Ray-Ban sunglasses",
+  title: "Sunglasses",
+  subtitle: "Tom Ford Bronson",
   description:
-    "Descubre el estilo icónico de los Ray-Ban RB4340 601 Wayfarer, un par de gafas de sol que nunca pasan de moda. Con una montura de color negro hecha de resistente nylon, estos lentes ofrecen una combinación perfecta de durabilidad y elegancia. Las lentes de color verde están fabricadas con vidrio, garantizando una visión clara y una protección óptima contra los rayos solares.",
+    "Tom Ford Sunglasses are the ultimate fashion accessory. Stunningly beautiful, innovative yet essentially classic, flawless, imaginative, unique. This super-stylish, one-of-a-kind, coloured Shiny Black model was designed and manufactured to perfection by Tom Ford in partnership with Italian producer Marcolin. An ideal choice for Man, the Tom Ford FT1044 01E are a thing of absolute beauty and timeless elegance. Check out all the latest models and designs in the new Tom Ford Sunglasses 2025 collection!",
   price: 16200,
   action: ACTION_BUTTONS.TRY_ON,
   content: () => import("../MediaPipe3DPage"),
@@ -22,19 +22,32 @@ const glasses = {
     "/assets/images/glasses-product/4.png",
     "/assets/images/glasses-product/5.png",
   ],
+  thumbnail: "/assets/images/glasses-product/4.png",
 };
 
 const helmet = {
   title: "Helmet",
+  subtitle: "Shark Ridill Helmet",
   description:
-    "Descubre el estilo icónico de Helmet, un par de gafas de sol que nunca pasan de moda. Con una montura de color negro hecha de resistente nylon, estos lentes ofrecen una combinación perfecta de durabilidad y elegancia. Las lentes de color verde están fabricadas con vidrio, garantizando una visión clara y una protección óptima contra los rayos solares.",
-  price: 31550,
+    "Shark Ridill 2 Blank Helmet Matt Black. It is the second generation of the Ridill model, approved according to the new ECE 22.06 regulations. Integral helmet with a sporty design made of injected polycarbonate with an internal sun visor. Its compact, modern and subtly sporty design with its vents and spoiler, is the image of Shark racing DNA. It has been designed to live one of the most comfortable riding experiences. It can be used in any type of driving.",
+  price: 15200,
   action: ACTION_BUTTONS.TRY_ON,
+  imgBaseUrl: "/assets/images/helmet-product",
+  images: [
+    "/assets/images/helmet-product/1.png",
+    "/assets/images/helmet-product/2.png",
+    "/assets/images/helmet-product/3.png",
+    "/assets/images/helmet-product/4.png",
+    "/assets/images/helmet-product/5.png",
+  ],
+  thumbnail: "/assets/images/helmet-product/4.png",
 };
 
 const officeChair = {
   title: "Office chair",
-  description: "lorem  ipsum",
+  subtitle: "Swivel chair,",
+  description:
+    "Generous padding in the seat and backrest makes this chair a great choice if you want to sit comfortably at the desk. The shape of the armrests provides good support and helps you find a good sitting position. This swivel chair has functions that allow you to easily adapt the chair to your body. Adjust the chair’s height by pushing the button below the seat. Washable – Removable covers make cleaning easy and keep the chair fresh.",
   price: 24000,
   action: ACTION_BUTTONS.AR,
   content: () => import("../../components/ModelViewer3D/ModelViewer3D.jsx"),
@@ -49,31 +62,48 @@ const officeChair = {
       { name: "Variant 6", color: "#a37845" },
     ],
   },
+  imgBaseUrl: "/assets/images/chair-product",
+  images: [
+    "/assets/images/chair-product/1.png",
+    "/assets/images/chair-product/2.png",
+    "/assets/images/chair-product/3.png",
+    "/assets/images/chair-product/4.png",
+    "/assets/images/chair-product/5.png",
+  ],
+  thumbnail: "/assets/images/chair-product/3.png",
 };
 
 const jacket = {
   title: "Jacket",
-  description: "Lorem",
-  price: 31550,
+  subtitle: "Padded cotton flight jacket",
+  description:
+    "This season, the classic flight jacket is reimagined for modern city life. Made from hard-wearing cotton, this version is designed with a chunky ribbed collar that zips into a funnel neck and has a padded lining for extra insulation. It features double-entry pockets at the chest and an internal pocket inside. Shell: 65% Cotton, 35% Polyamide (Nylon). Lining: 100% TENCEL™ Lyocell. Padding: 100% Recycled polyester. Excluding trims / Machine wash.",
+  price: 18000,
   action: ACTION_BUTTONS.CONFIGURE_AI,
   content: () => import("../../components/OutfitTryOn/OutfitTryOn.jsx"),
+  imgBaseUrl: "/assets/images/jacket-product",
+  images: [
+    "/assets/images/jacket-product/1.png",
+    "/assets/images/jacket-product/2.png",
+    "/assets/images/jacket-product/3.png",
+    "/assets/images/jacket-product/4.png",
+    "/assets/images/jacket-product/5.png",
+  ],
+  thumbnail: "/assets/images/jacket-product/3.png",
 };
 
 const dummyProduct = {
   title: "Helmet",
-  description:
-    "Descubre el estilo icónico de Helmet, un par de gafas de sol que nunca pasan de moda. Con una montura de color negro hecha de resistente nylon, estos lentes ofrecen una combinación perfecta de durabilidad y elegancia. Las lentes de color verde están fabricadas con vidrio, garantizando una visión clara y una protección óptima contra los rayos solares.",
-  price: 31550,
+  description: "Dummy Product",
+  price: 30000,
   isDummy: true,
 };
 
 export const productList = [
   glasses,
   helmet,
-  officeChair,
   jacket,
-  dummyProduct,
-  dummyProduct,
+  officeChair,
   dummyProduct,
   dummyProduct,
   dummyProduct,
