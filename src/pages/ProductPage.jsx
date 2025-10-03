@@ -88,7 +88,10 @@ const ProductPage = () => {
             <div className="product-image">
               {/* No images -> Default picture */}
               {(!product.images || product.images.length === 0) && (
-                <img src="/assets/images/image.png" alt={product.title} />
+                <img
+                  src="/assets/images/placeholder.webp"
+                  alt={product.title}
+                />
               )}
               {/* One img -> Show it */}
               {product.images?.length === 1 && (
@@ -111,6 +114,10 @@ const ProductPage = () => {
           <div className="product-details">
             <h2>{product.title}</h2>
 
+            {/* Price */}
+            <p>{formatPrice(product.price)}</p>
+
+            {/* Add to cart button  */}
             <div style={{ display: "flex", flexDirection: "column", gap: 5 }}>
               <OptionButton
                 label="Add to cart"
@@ -123,7 +130,7 @@ const ProductPage = () => {
               </span>
             </div>
 
-            <p>{formatPrice(product.price)}</p>
+            {/* Description */}
             <p style={{ fontWeight: 200 }}>{product.description}</p>
           </div>
         </div>
