@@ -13,7 +13,7 @@ const glasses = {
     "Descubre el estilo icónico de los Ray-Ban RB4340 601 Wayfarer, un par de gafas de sol que nunca pasan de moda. Con una montura de color negro hecha de resistente nylon, estos lentes ofrecen una combinación perfecta de durabilidad y elegancia. Las lentes de color verde están fabricadas con vidrio, garantizando una visión clara y una protección óptima contra los rayos solares.",
   price: 16200,
   action: ACTION_BUTTONS.TRY_ON,
-  content: () => import("../MediaPipe3DPage"),
+  content: () => import("../../components/product-page/Helmet3DViewer.jsx"),
   imgBaseUrl: "/assets/images/glasses-product",
   images: [
     "/assets/images/glasses-product/1.png",
