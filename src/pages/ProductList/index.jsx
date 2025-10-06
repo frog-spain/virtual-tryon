@@ -4,7 +4,7 @@ import ProductCard from "./ProductCard";
 // Dependencies
 import { slugify } from "../../utils/slugify";
 import styles from "./index.module.scss";
-import { TryOn3dProducts, ARProducts, AIProducts } from "./products-list";
+import { TryOn3dProducts, ARProducts, AIProducts } from "./product-list";
 
 const ProductList = () => {
   return (
