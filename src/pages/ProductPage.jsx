@@ -2,7 +2,7 @@
 import React, { useState, useMemo, Suspense, lazy } from "react";
 import { useParams, Link } from "react-router-dom";
 // Dependencies
-import { productList } from "./ProductList/products-list";
+import { productList } from "./ProductList/product-list";
 import { slugify } from "../utils/slugify";
 import { formatPrice } from "../utils/formatPrice";
 // UI
