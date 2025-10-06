@@ -1,11 +1,17 @@
 import { Link } from "react-router-dom";
 import { formatPrice } from "../../utils/formatPrice";
+import styles from "./index.module.scss";
 
 const ProductCard = ({ title, price, image, isDummy, slug }) => {
   console.log(title, image);
   return (
-    <Link to={`/product-demo/products/${slug}`} className="product-card-link">
-      <div className={`product-card-wrapper` + (isDummy ? " dummy" : "")}>
+    <Link
+      to={`/product-demo/products/${slug}`}
+      className={`${styles.productCardLink} ${isDummy ? styles.dummyLink : ""}`}
+    >
+      <div
+        className={`${styles.productCardWrapper} ${isDummy ? styles.dummy : ""}`}
+      >
         <div>
           {image ? (
             <img src={image} alt={title} />
@@ -15,8 +21,8 @@ const ProductCard = ({ title, price, image, isDummy, slug }) => {
         </div>
 
         <footer>
-          <h2 className="product-title">{title}</h2>
-          <span className="product-price">{formatPrice(price)}</span>
+          <h2>{title}</h2>
+          <span>{formatPrice(price)}</span>
         </footer>
       </div>
     </Link>

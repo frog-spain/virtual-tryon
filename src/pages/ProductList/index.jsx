@@ -1,8 +1,8 @@
 import BackButton from "../../ui/BackButton";
 import { productList } from "./products-list";
 import ProductCard from "./ProductCard";
-
 import { slugify } from "../../utils/slugify";
+import styles from "./index.module.scss";
 
 const ProductList = () => {
   return (
@@ -12,7 +12,7 @@ const ProductList = () => {
       <div className="product-cards-page">
         <h1 style={{ marginBottom: 40 }}>Marketplace Demo</h1>
 
-        <div className="product-cards-grid">
+        <div className={styles.productCardsGrid}>
           {productList.map(product => {
             const slug = slugify(product.title);
             return (
