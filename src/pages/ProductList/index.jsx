@@ -14,6 +14,7 @@ const ProductList = () => {
       <div className="product-cards-page">
         <h1 style={{ marginBottom: 40 }}>Marketplace Demo</h1>
         <div className={styles.productListWrapper}>
+          {/* 3D Try-on */}
           <div>
             <h2>3D Try-on</h2>
             <div className={styles.productCardsGrid}>
@@ -32,6 +33,8 @@ const ProductList = () => {
               })}
             </div>
           </div>
+
+          {/* AI Outfit Try-on */}
           <div>
             <h2>AI Outfit Try-on</h2>
             <div className={styles.productCardsGrid}>
@@ -50,6 +53,8 @@ const ProductList = () => {
               })}
             </div>
           </div>
+
+          {/* Model-viewer */}
           <div>
             <h2>AR Product Configurator</h2>
             <div className={styles.productCardsGrid}>
