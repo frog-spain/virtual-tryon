@@ -39,7 +39,7 @@ const OutfitTryOn = () => {
   };
 
   return (
-    <div className={styles.cOutfitTryOn__container}>
+    <div className={styles.outfitTryOn__container}>
       <DropzoneInput
         label="Tu foto:"
         file={userFile}
@@ -48,18 +48,17 @@ const OutfitTryOn = () => {
         badgeColor="var(--text-color)"
       />
       <DropzoneInput
-        label="La prenda que quieres probarte:"
         file={outfitFile}
         setFile={setOutfitFile}
         badge="="
         badgeColor="var(--accent-color)"
       />
 
-      <div className={styles.cOutfitTryOn__result}>
+      <div className={styles.outfitTryOn__result}>
         {outputImage ? (
           <img src={outputImage} alt="Resultado" />
         ) : (
-          <div className={styles.cOutfitTryOn__placeholder}>
+          <div className={styles.outfitTryOn__placeholder}>
             Aquí verás tu outfit con IA 👗
           </div>
         )}
