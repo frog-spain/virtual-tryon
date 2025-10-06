@@ -1,7 +1,7 @@
 // Action buttons
 const ACTION_BUTTONS = {
   TRY_ON_3D: { label: "Live Try On" },
-  AI_TRY_AI: { label: "Try Outfit with AI" },
+  AI_TRY_ON: { label: "Try Outfit with AI" },
   AR: { label: "See in your environment" },
 };
 
@@ -79,7 +79,7 @@ const jacket = {
   description:
     "This season, the classic flight jacket is reimagined for modern city life. Made from hard-wearing cotton, this version is designed with a chunky ribbed collar that zips into a funnel neck and has a padded lining for extra insulation. It features double-entry pockets at the chest and an internal pocket inside. Shell: 65% Cotton, 35% Polyamide (Nylon). Lining: 100% TENCEL™ Lyocell. Padding: 100% Recycled polyester. Excluding trims / Machine wash.",
   price: 18000,
-  action: ACTION_BUTTONS.AI_TRY_AI,
+  action: ACTION_BUTTONS.AI_TRY_ON,
   content: () =>
     import("../../components/product-page-modals/JacketModalContent.jsx"),
   imgBaseUrl: "/assets/images/jacket-product",
