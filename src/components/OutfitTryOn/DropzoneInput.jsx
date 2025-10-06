@@ -19,8 +19,8 @@ export default function DropzoneInput({
 
   return (
     <label
-      className={`${styles.dopzoneInput__dropzone} ${
-        isDragging ? styles["dopzoneInput__dropzone--active"] : ""
+      className={`${styles.dropzoneInput__dropzone} ${
+        isDragging ? styles["dropzoneInput__dropzone--active"] : ""
       }`}
       onDragOver={e => e.preventDefault()}
       onDragEnter={() => setIsDragging(true)}
