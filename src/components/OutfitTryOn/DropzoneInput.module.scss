@@ -1,8 +1,4 @@
 .dopzoneInput {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-
   p {
     margin: 0;
     color: #333;
@@ -15,6 +11,7 @@
     background: #fff;
     position: relative;
     transition: all 0.2s ease-in-out;
+    aspect-ratio: 0.8;
 
     flex-grow: 1;
     display: flex;

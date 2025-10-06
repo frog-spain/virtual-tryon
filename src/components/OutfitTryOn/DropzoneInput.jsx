@@ -18,35 +18,28 @@ export default function DropzoneInput({
   };
 
   return (
-    <div className={styles.dopzoneInput}>
-      <label
-        className={`${styles.dopzoneInput__dropzone} ${
-          isDragging ? styles["dopzoneInput__dropzone--active"] : ""
-        }`}
-        onDragOver={e => e.preventDefault()}
-        onDragEnter={() => setIsDragging(true)}
-        onDragLeave={() => setIsDragging(false)}
-        onDrop={e => {
-          e.preventDefault();
-          setIsDragging(false);
-          handleFileChange(e);
-        }}
-        data-badge={badge || undefined}
-        style={badgeColor ? { "--badge-bg": badgeColor } : undefined}
-      >
-        <input
-          type="file"
-          accept="image/*"
-          onChange={handleFileChange}
-          hidden
-        />
+    <label
+      className={`${styles.dopzoneInput__dropzone} ${
+        isDragging ? styles["dopzoneInput__dropzone--active"] : ""
+      }`}
+      onDragOver={e => e.preventDefault()}
+      onDragEnter={() => setIsDragging(true)}
+      onDragLeave={() => setIsDragging(false)}
+      onDrop={e => {
+        e.preventDefault();
+        setIsDragging(false);
+        handleFileChange(e);
+      }}
+      data-badge={badge || undefined}
+      style={badgeColor ? { "--badge-bg": badgeColor } : undefined}
+    >
+      <input type="file" accept="image/*" onChange={handleFileChange} hidden />
 
-        {file ? (
-          <img src={URL.createObjectURL(file)} alt="Preview" />
-        ) : (
-          <p>{label || "Click or drag & drop"}</p>
-        )}
-      </label>
-    </div>
+      {file ? (
+        <img src={URL.createObjectURL(file)} alt="Preview" />
+      ) : (
+        <p>{label || "Click or drag & drop"}</p>
+      )}
+    </label>
   );
 }
