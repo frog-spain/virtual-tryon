@@ -4,7 +4,7 @@ import ProductCard from "./ProductCard";
 
 import { slugify } from "../../utils/slugify";
 
-const ProductDemoPage = () => {
+const ProductList = () => {
   return (
     <div className="demo-container">
       <BackButton />
@@ -32,4 +32,4 @@ const ProductDemoPage = () => {
   );
 };
 
-export default ProductDemoPage;
+export default ProductList;

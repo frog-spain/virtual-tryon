@@ -5,7 +5,7 @@ const Home = lazy(() => import("./pages/Home.jsx"));
 const ModelViewerPage = lazy(() => import("./pages/ModelViewerPage"));
 const MediaPipe2DPage = lazy(() => import("./pages/MediaPipe2DPage"));
 const MediaPipe3DPage = lazy(() => import("./pages/MediaPipe3DPage"));
-const ProductDemoPage = lazy(() => import("./pages/ProductDemoPage"));
+const ProductList = lazy(() => import("./pages/ProductList"));
 const ProductPage = lazy(() => import("./pages/ProductPage.jsx"));
 
 function App() {
@@ -15,7 +15,7 @@ function App() {
       <Route path="/model-viewer" element={<ModelViewerPage />} />
       <Route path="/mediapipe" element={<MediaPipe2DPage />} />
       <Route path="/mediapipe-3d" element={<MediaPipe3DPage />} />
-      <Route path="/product-demo" element={<ProductDemoPage />} />
+      <Route path="/product-demo" element={<ProductList />} />
       <Route path="/product-demo/products/:slug" element={<ProductPage />} />
     </Routes>
   );
