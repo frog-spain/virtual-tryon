@@ -1,28 +1,39 @@
 import { tryOnClothes } from "/lib/api.js";
-import { useState } from "react";
+import { urlToFile } from "/lib/fileUtils.js";
+import { useState, useEffect } from "react";
 
 import DropzoneInput from "./DropzoneInput.jsx";
 import OptionButton from "../../ui/OptionButton.jsx";
 
 import styles from "./index.module.scss";
 
-const OutfitTryOn = () => {
+const OutfitTryOn = ({ outfitPath }) => {
   const [userFile, setUserFile] = useState(null);
   const [outfitFile, setOutfitFile] = useState(null);
   const [loading, setLoading] = useState(false);
   const [outputImage, setOutputImage] = useState(null);
 
-  const handleGenerate = async () => {
-    if (!userFile || !outfitFile) {
-      alert("Sube ambas imágenes.");
-      return;
-    }
+  useEffect(() => {
+    const loadOutfitFile = async () => {
+      if (outfitPath && typeof outfitPath === "string") {
+        try {
+          const fileName = outfitPath.split("/").pop() || "outfit.png";
+          const file = await urlToFile(outfitPath, fileName);
+          setOutfitFile(file);
+        } catch (err) {
+          console.error("Error loading outfit file:", err);
+        }
+      }
+    };
 
+    loadOutfitFile();
+  }, [outfitPath]);
+
+  const handleGenerate = async () => {
     try {
       setLoading(true);
       setOutputImage(null);
 
-      // usando api.js
       const result = await tryOnClothes({ userFile, outfitFile });
 
       if (result.image) {
@@ -39,35 +50,40 @@ const OutfitTryOn = () => {
   };
 
   return (
-    <div className={styles.outfitTryOn__container}>
-      <DropzoneInput
-        label="Arrastra y suelta tu foto"
-        file={userFile}
-        setFile={setUserFile}
-        badge="+"
-        badgeColor="var(--text-color)"
-      />
-      <DropzoneInput
-        file={outfitFile}
-        setFile={setOutfitFile}
-        badge="="
-        badgeColor="var(--accent-color)"
-      />
+    <div className={styles.outfitTryOn}>
+      <div className={styles.outfitTryOn__imagesGrid}>
+        <DropzoneInput
+          file={outfitFile}
+          setFile={setOutfitFile}
+          badge="+"
+          badgeColor="var(--accent-color)"
+        />
+        <DropzoneInput
+          label="Arrastra y suelta tu foto"
+          file={userFile}
+          setFile={setUserFile}
+          badge="="
+          badgeColor="var(--primary-color)"
+        />
 
-      <div className={styles.outfitTryOn__result}>
-        {outputImage ? (
-          <img src={outputImage} alt="Resultado" />
-        ) : (
-          <div className={styles.outfitTryOn__placeholder}>
-            Aquí verás tu outfit con IA 👗
-          </div>
-        )}
+        <div className={styles.outfitTryOn__result}>
+          {outputImage ? (
+            <img src={outputImage} alt="Resultado" />
+          ) : (
+            <div className={styles.outfitTryOn__placeholder}>
+              Aquí verás tu outfit con IA 👗
+            </div>
+          )}
+        </div>
       </div>
-      <OptionButton
-        onClick={handleGenerate}
-        disabled={loading}
-        label={loading ? "Procesando..." : "Probar prenda"}
-      />
+
+      {!outputImage && (
+        <OptionButton
+          onClick={handleGenerate}
+          disabled={loading || !userFile || !outfitFile}
+          label={loading ? "Procesando..." : "Probar prenda!"}
+        />
+      )}
     </div>
   );
 };

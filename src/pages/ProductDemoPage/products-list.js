@@ -80,7 +80,8 @@ const jacket = {
     "This season, the classic flight jacket is reimagined for modern city life. Made from hard-wearing cotton, this version is designed with a chunky ribbed collar that zips into a funnel neck and has a padded lining for extra insulation. It features double-entry pockets at the chest and an internal pocket inside. Shell: 65% Cotton, 35% Polyamide (Nylon). Lining: 100% TENCEL™ Lyocell. Padding: 100% Recycled polyester. Excluding trims / Machine wash.",
   price: 18000,
   action: ACTION_BUTTONS.CONFIGURE_AI,
-  content: () => import("../../components/OutfitTryOn/index.jsx"),
+  content: () =>
+    import("../../components/product-page-modals/JacketModalContent.jsx"),
   imgBaseUrl: "/assets/images/jacket-product",
   images: [
     "/assets/images/jacket-product/1.png",
