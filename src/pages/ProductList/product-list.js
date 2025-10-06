@@ -102,8 +102,13 @@ const dummyProduct = {
 
 export const productList = [glasses, helmet, jacket, officeChair];
 
-export const TryOn3dProducts = [glasses, helmet, dummyProduct, dummyProduct];
-export const AIProducts = [jacket, dummyProduct, dummyProduct, dummyProduct];
+export const tryOn3dProducts = [glasses, helmet, dummyProduct, dummyProduct];
+export const tryOnAIProducts = [
+  jacket,
+  dummyProduct,
+  dummyProduct,
+  dummyProduct,
+];
 export const ARProducts = [
   officeChair,
   dummyProduct,
