@@ -1,4 +1,5 @@
 @use "variables" as *;
+@use "animations";
 
 body {
   margin: 0;
@@ -38,6 +39,10 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
+
+  &:not(:disabled) {
+    animation: pulse 2s infinite;
+  }
 
   &:hover {
     background: $accent-color;
