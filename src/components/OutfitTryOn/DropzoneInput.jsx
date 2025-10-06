@@ -18,11 +18,10 @@ export default function DropzoneInput({
   };
 
   return (
-    <div className={styles.cDropzoneInput}>
-      <p>{label}</p>
+    <div className={styles.dopzoneInput}>
       <label
-        className={`${styles.cDropzoneInput__dropzone} ${
-          isDragging ? styles["cDropzoneInput__dropzone--active"] : ""
+        className={`${styles.dopzoneInput__dropzone} ${
+          isDragging ? styles["dopzoneInput__dropzone--active"] : ""
         }`}
         onDragOver={e => e.preventDefault()}
         onDragEnter={() => setIsDragging(true)}
@@ -45,7 +44,7 @@ export default function DropzoneInput({
         {file ? (
           <img src={URL.createObjectURL(file)} alt="Preview" />
         ) : (
-          <p>Click or drag & drop</p>
+          <p>{label || "Click or drag & drop"}</p>
         )}
       </label>
     </div>

@@ -4,7 +4,7 @@ import { useState } from "react";
 import DropzoneInput from "./DropzoneInput.jsx";
 import OptionButton from "../../ui/OptionButton.jsx";
 
-import styles from "./OutfitTryOn.module.scss";
+import styles from "./index.module.scss";
 
 const OutfitTryOn = () => {
   const [userFile, setUserFile] = useState(null);
@@ -41,7 +41,7 @@ const OutfitTryOn = () => {
   return (
     <div className={styles.outfitTryOn__container}>
       <DropzoneInput
-        label="Tu foto:"
+        label="Arrastra y suelta tu foto"
         file={userFile}
         setFile={setUserFile}
         badge="+"
