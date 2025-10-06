@@ -94,19 +94,14 @@ const jacket = {
 };
 
 const dummyProduct = {
-  title: "Helmet",
+  title: "Product",
   description: "Dummy Product",
   price: 30000,
   isDummy: true,
 };
 
-export const productList = [
-  glasses,
-  helmet,
-  jacket,
-  officeChair,
-  dummyProduct,
-  dummyProduct,
-  dummyProduct,
-  dummyProduct,
-];
+export const productList = [glasses, helmet, jacket, officeChair];
+
+export const TryOn3dProducts = [glasses, helmet, dummyProduct];
+export const ARProducts = [officeChair, dummyProduct, dummyProduct];
+export const AIProducts = [jacket, dummyProduct];
