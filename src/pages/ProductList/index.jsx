@@ -10,7 +10,7 @@ const ProductDemoPage = () => {
       <BackButton />
 
       <div className="product-cards-page">
-        <h1 style={{ marginBottom: 40 }}>3D Marketplace Demo</h1>
+        <h1 style={{ marginBottom: 40 }}>Marketplace Demo</h1>
 
         <div className="product-cards-grid">
           {productList.map(product => {
