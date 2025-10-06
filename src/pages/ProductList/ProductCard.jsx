@@ -3,30 +3,27 @@ import { formatPrice } from "../../utils/formatPrice";
 import styles from "./index.module.scss";
 
 const ProductCard = ({ title, price, image, isDummy, slug }) => {
-  console.log(title, image);
-  return (
-    <Link
-      to={`/product-demo/products/${slug}`}
-      className={`${styles.productCardLink} ${isDummy ? styles.dummyLink : ""}`}
+  <Link
+    to={`/product-demo/products/${slug}`}
+    className={`${styles.productCardLink} ${isDummy ? styles.dummyLink : ""}`}
+  >
+    <div
+      className={`${styles.productCardWrapper} ${isDummy ? styles.dummy : ""}`}
     >
-      <div
-        className={`${styles.productCardWrapper} ${isDummy ? styles.dummy : ""}`}
-      >
-        <div>
-          {image ? (
-            <img src={image} alt={title} />
-          ) : (
-            <img src="/assets/images/placeholder.webp" alt={title} />
-          )}
-        </div>
-
-        <footer>
-          <h2>{title}</h2>
-          <span>{formatPrice(price)}</span>
-        </footer>
+      <div>
+        {image ? (
+          <img src={image} alt={title} />
+        ) : (
+          <img src="/assets/images/placeholder.webp" alt={title} />
+        )}
       </div>
-    </Link>
-  );
+
+      <footer>
+        <h2>{title}</h2>
+        <span>{formatPrice(price)}</span>
+      </footer>
+    </div>
+  </Link>;
 };
 
 export default ProductCard;
