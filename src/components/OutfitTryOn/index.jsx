@@ -1,4 +1,4 @@
-import { tryOnClothes } from "../../../lib/api.js";
+import { tryOnClothes } from "/lib/api.js";
 import { useState } from "react";
 
 import DropzoneInput from "./DropzoneInput.jsx";
