@@ -1,8 +1,8 @@
 // Action buttons
 const ACTION_BUTTONS = {
+  TRY_ON_3D: { label: "Live Try On" },
+  TRY_ON_AI: { label: "Try Outfit with AI" },
   AR: { label: "See in your environment" },
-  TRY_ON: { label: "Live Try On" },
-  CONFIGURE_AI: { label: "Try Outfit with AI" },
 };
 
 // Products
@@ -12,8 +12,8 @@ const glasses = {
   description:
     "Tom Ford Sunglasses are the ultimate fashion accessory. Stunningly beautiful, innovative yet essentially classic, flawless, imaginative, unique. This super-stylish, one-of-a-kind, coloured Shiny Black model was designed and manufactured to perfection by Tom Ford in partnership with Italian producer Marcolin. An ideal choice for Man, the Tom Ford FT1044 01E are a thing of absolute beauty and timeless elegance. Check out all the latest models and designs in the new Tom Ford Sunglasses 2025 collection!",
   price: 16200,
-  action: ACTION_BUTTONS.TRY_ON,
-  content: () => import("../MediaPipe3DPage"),
+  action: ACTION_BUTTONS.TRY_ON_3D,
+  content: () => import("../MediaPipe3DPage.jsx"),
   imgBaseUrl: "/assets/images/glasses-product",
   images: [
     "/assets/images/glasses-product/1.png",
@@ -31,7 +31,7 @@ const helmet = {
   description:
     "Shark Ridill 2 Blank Helmet Matt Black. It is the second generation of the Ridill model, approved according to the new ECE 22.06 regulations. Integral helmet with a sporty design made of injected polycarbonate with an internal sun visor. Its compact, modern and subtly sporty design with its vents and spoiler, is the image of Shark racing DNA. It has been designed to live one of the most comfortable riding experiences. It can be used in any type of driving.",
   price: 15200,
-  action: ACTION_BUTTONS.TRY_ON,
+  action: ACTION_BUTTONS.TRY_ON_3D,
   imgBaseUrl: "/assets/images/helmet-product",
   images: [
     "/assets/images/helmet-product/1.png",
@@ -79,7 +79,7 @@ const jacket = {
   description:
     "This season, the classic flight jacket is reimagined for modern city life. Made from hard-wearing cotton, this version is designed with a chunky ribbed collar that zips into a funnel neck and has a padded lining for extra insulation. It features double-entry pockets at the chest and an internal pocket inside. Shell: 65% Cotton, 35% Polyamide (Nylon). Lining: 100% TENCEL™ Lyocell. Padding: 100% Recycled polyester. Excluding trims / Machine wash.",
   price: 18000,
-  action: ACTION_BUTTONS.CONFIGURE_AI,
+  action: ACTION_BUTTONS.TRY_ON_AI,
   content: () =>
     import("../../components/product-page-modals/JacketModalContent.jsx"),
   imgBaseUrl: "/assets/images/jacket-product",
@@ -94,18 +94,23 @@ const jacket = {
 };
 
 const dummyProduct = {
-  title: "Helmet",
+  title: "Product",
   description: "Dummy Product",
   price: 30000,
   isDummy: true,
 };
 
-export const productList = [
-  glasses,
-  helmet,
+export const productList = [glasses, helmet, jacket, officeChair];
+
+export const tryOn3dProducts = [glasses, helmet, dummyProduct, dummyProduct];
+export const tryOnAIProducts = [
   jacket,
-  officeChair,
   dummyProduct,
+  dummyProduct,
+  dummyProduct,
+];
+export const ARProducts = [
+  officeChair,
   dummyProduct,
   dummyProduct,
   dummyProduct,
