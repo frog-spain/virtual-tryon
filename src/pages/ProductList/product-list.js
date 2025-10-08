@@ -14,7 +14,9 @@ const glasses = {
   price: 16200,
   action: ACTION_BUTTONS.TRY_ON_3D,
   content: () =>
-    import("../../components/product-page-modals/HelmetModalContent/index.jsx"),
+    import(
+      "../../components/product-page-modals/GlassesModalContent/index.jsx"
+    ),
   imgBaseUrl: "/assets/images/glasses-product",
   images: [
     "/assets/images/glasses-product/1.png",
