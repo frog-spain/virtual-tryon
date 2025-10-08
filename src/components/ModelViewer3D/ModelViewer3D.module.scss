@@ -19,21 +19,3 @@
   gap: 0.5rem;
   justify-content: center;
 }
-
-.swatch {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  border: 2px solid #ccc;
-  cursor: pointer;
-  transition: transform 0.2s ease;
-
-  &:hover {
-    transform: scale(1.1);
-  }
-}
-
-.active {
-  border-color: #6145ff;
-  box-shadow: 0 0 0 2px rgba(97, 69, 255, 0.3);
-}
