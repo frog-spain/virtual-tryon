@@ -5,7 +5,7 @@ import HelmetModel from "../../models/HelmetModel";
 import FantasyHelmetModel from "../../models/FantasyHelmetModel";
 import PunkHelmetModel from "../../models/PunkHelmetModel";
 // UI
-import OptionButton from "../../../ui/OptionButton";
+import Swatch from "../../../ui/Swatch";
 // Dependencies
 import { getFaceLandmarker } from "/lib/mediapipe";
 import styles from "./index.module.scss";
@@ -83,58 +83,64 @@ const Helmet3DViewer = () => {
 
   return (
     <div className={styles.productPageModalContainer}>
-      <ul className="options-list">
+      <div>
+        <div className="position-relative">
+          {/* Camera recording */}
+          <video
+            ref={videoRef}
+            style={{
+              borderRadius: 12,
+              transform: "scaleX(-1)",
+              display: "flex",
+            }}
+          />
+
+          {/* Media Pipe */}
+          <canvas
+            ref={canvasRef}
+            width={videoRef.current?.videoWidth}
+            height={videoRef.current?.videoHeight}
+            className="position-absolute"
+            style={{ display: "none" }}
+          />
+
+          {/* 3D Models */}
+          <ThreeScene
+            transformMatrix={transformMatrix}
+            defaultModel={<HelmetModel />}
+            fantasyModel={<FantasyHelmetModel />}
+            punkModel={<PunkHelmetModel />}
+            selectedVariant={selectedVariant}
+          />
+        </div>
+      </div>
+
+      <ul className={styles.swatchList}>
         <li>
-          <OptionButton
-            label={"Default"}
-            selected={selectedVariant === DEFAULT_VARIANT}
+          <Swatch
+            color="#907563"
+            name="Default"
+            isActive={selectedVariant === DEFAULT_VARIANT}
             onClick={() => setSelectedVariant(DEFAULT_VARIANT)}
           />
         </li>
         <li>
-          <OptionButton
-            label={"Fantasy"}
-            selected={selectedVariant === FANTASY_VARIANT}
+          <Swatch
+            color="#d4cef7"
+            name="Fantasy"
+            isActive={selectedVariant === FANTASY_VARIANT}
             onClick={() => setSelectedVariant(FANTASY_VARIANT)}
           />
         </li>
         <li>
-          <OptionButton
-            label={"Punk"}
-            selected={selectedVariant === PUNK_VARIANT}
+          <Swatch
+            color="#ff5a2c"
+            name="Punk"
+            isActive={selectedVariant === PUNK_VARIANT}
             onClick={() => setSelectedVariant(PUNK_VARIANT)}
           />
         </li>
       </ul>
-      <div className="position-relative">
-        {/* Camera recording */}
-        <video
-          ref={videoRef}
-          style={{
-            borderRadius: 12,
-            transform: "scaleX(-1)",
-            display: "flex",
-          }}
-        />
-
-        {/* Media Pipe */}
-        <canvas
-          ref={canvasRef}
-          width={videoRef.current?.videoWidth}
-          height={videoRef.current?.videoHeight}
-          className="position-absolute"
-          style={{ display: "none" }}
-        />
-
-        {/* 3D Models */}
-        <ThreeScene
-          transformMatrix={transformMatrix}
-          defaultModel={<HelmetModel />}
-          fantasyModel={<FantasyHelmetModel />}
-          punkModel={<PunkHelmetModel />}
-          selectedVariant={selectedVariant}
-        />
-      </div>
     </div>
   );
 };
