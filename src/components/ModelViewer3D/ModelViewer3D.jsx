@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 
+import Swatch from "../../ui/Swatch";
 import styles from "./ModelViewer3D.module.scss";
 
 const ModelViewer3D = ({ model, variants }) => {
@@ -33,12 +34,12 @@ const ModelViewer3D = ({ model, variants }) => {
       {variants.length > 0 && (
         <div className={styles.variants}>
           {variants.map(v => (
-            <button
+            <Swatch
               key={v.name}
-              className={`${styles.swatch} ${selected === v.name ? styles.active : ""}`}
-              style={{ backgroundColor: v.color }}
+              color={v.color}
+              isActive={selected === v.name}
               onClick={() => setSelected(v.name)}
-              title={v.name}
+              name={v.name}
             />
           ))}
         </div>

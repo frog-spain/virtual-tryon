@@ -13,7 +13,10 @@ const glasses = {
     "Tom Ford Sunglasses are the ultimate fashion accessory. Stunningly beautiful, innovative yet essentially classic, flawless, imaginative, unique. This super-stylish, one-of-a-kind, coloured Shiny Black model was designed and manufactured to perfection by Tom Ford in partnership with Italian producer Marcolin. An ideal choice for Man, the Tom Ford FT1044 01E are a thing of absolute beauty and timeless elegance. Check out all the latest models and designs in the new Tom Ford Sunglasses 2025 collection!",
   price: 16200,
   action: ACTION_BUTTONS.TRY_ON_3D,
-  content: () => import("../MediaPipe3DPage.jsx"),
+  content: () =>
+    import(
+      "../../components/product-page-modals/GlassesModalContent/index.jsx"
+    ),
   imgBaseUrl: "/assets/images/glasses-product",
   images: [
     "/assets/images/glasses-product/1.png",
@@ -32,6 +35,8 @@ const helmet = {
     "Shark Ridill 2 Blank Helmet Matt Black. It is the second generation of the Ridill model, approved according to the new ECE 22.06 regulations. Integral helmet with a sporty design made of injected polycarbonate with an internal sun visor. Its compact, modern and subtly sporty design with its vents and spoiler, is the image of Shark racing DNA. It has been designed to live one of the most comfortable riding experiences. It can be used in any type of driving.",
   price: 15200,
   action: ACTION_BUTTONS.TRY_ON_3D,
+  content: () =>
+    import("../../components/product-page-modals/HelmetModalContent/index.jsx"),
   imgBaseUrl: "/assets/images/helmet-product",
   images: [
     "/assets/images/helmet-product/1.png",

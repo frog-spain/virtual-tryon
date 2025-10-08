@@ -40,7 +40,7 @@ body {
   align-items: center;
   gap: 10px;
 
-  &:not(:disabled) {
+  &.pulsating:not(:disabled) {
     animation: pulse 2s infinite;
   }
 
