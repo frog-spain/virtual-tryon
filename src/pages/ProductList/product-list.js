@@ -78,6 +78,27 @@ const officeChair = {
   thumbnail: "/assets/images/chair-product/3.png",
 };
 
+const table = {
+  title: "Table",
+  subtitle: "Wooden table",
+  description:
+    "A wooden table is a versatile and timeless piece of furniture that can enhance the aesthetic and functionality of any space. Whether used as a dining table, coffee table, or workspace, a wooden table adds warmth and character to a room. It can be crafted from various types of wood, each with its own unique grain patterns and colors, allowing for customization to suit different styles and preferences. Wooden tables are known for their durability and longevity, making them a practical investment for both residential and commercial settings. With proper care and maintenance, a wooden table can become a cherished heirloom that withstands the test of time.",
+  price: 180000,
+  action: ACTION_BUTTONS.AR,
+  content: () => import("../../components/ModelViewer3D/ModelViewer3D.jsx"),
+  contentProps: {
+    model: "table.glb",
+    variants: [],
+  },
+  imgBaseUrl: "/assets/images/table-product",
+  images: [
+    "/assets/images/table-product/1.png",
+    "/assets/images/table-product/2.png",
+    "/assets/images/table-product/3.png",
+  ],
+  thumbnail: "/assets/images/table-product/1.png",
+};
+
 const jacket = {
   title: "Jacket",
   subtitle: "Padded cotton flight jacket",
@@ -98,6 +119,45 @@ const jacket = {
   thumbnail: "/assets/images/jacket-product/3.png",
 };
 
+const top = {
+  title: "Top",
+  subtitle: "FITTED TOP W ZIP / dark blue & electric green",
+  description:
+    "Longsleeve fitted roundneck top made with vanisè technical fabric featuring dark blue & electric green bicolour yarn, SUNNEI branded puller, and gros grain on back right loop. Ai is wearing a size S. Delivery to countries outside the EU may be subject to local import taxes, which are your responsibility.",
+  price: 12000,
+  action: ACTION_BUTTONS.TRY_ON_AI,
+  content: () =>
+    import("../../components/product-page-modals/TopModalContent.jsx"),
+  imgBaseUrl: "/assets/images/top-product",
+  images: [
+    "/assets/images/top-product/1.png",
+    "/assets/images/top-product/2.png",
+    "/assets/images/top-product/3.png",
+    "/assets/images/top-product/4.png",
+    "/assets/images/top-product/5.png",
+  ],
+  thumbnail: "/assets/images/top-product/2.png",
+};
+
+const dress = {
+  title: "Dress",
+  subtitle: "BUTTONED PIMA COTTON MINI DRESS",
+  description:
+    "This mini dress reimagines tailoring codes for the spring/summer wardrobe. Crafted from lightweight Pima cotton, it's designed with a V-neckline, waistcoat-style buttons and back ties that define the shape. The soft pink tone is a natural choice for sun-drawn days.",
+  price: 9900,
+  action: ACTION_BUTTONS.TRY_ON_AI,
+  content: () =>
+    import("../../components/product-page-modals/DressModalContent.jsx"),
+  imgBaseUrl: "/assets/images/dress-product",
+  images: [
+    "/assets/images/dress-product/1.png",
+    "/assets/images/dress-product/2.png",
+    "/assets/images/dress-product/3.png",
+    "/assets/images/dress-product/4.png",
+  ],
+  thumbnail: "/assets/images/dress-product/2.png",
+};
+
 const dummyProduct = {
   title: "Product",
   description: "Dummy Product",
@@ -105,18 +165,16 @@ const dummyProduct = {
   isDummy: true,
 };
 
-export const productList = [glasses, helmet, jacket, officeChair];
+export const productList = [
+  glasses,
+  helmet,
+  jacket,
+  top,
+  dress,
+  table,
+  officeChair,
+];
 
 export const tryOn3dProducts = [glasses, helmet, dummyProduct, dummyProduct];
-export const tryOnAIProducts = [
-  jacket,
-  dummyProduct,
-  dummyProduct,
-  dummyProduct,
-];
-export const ARProducts = [
-  officeChair,
-  dummyProduct,
-  dummyProduct,
-  dummyProduct,
-];
+export const tryOnAIProducts = [jacket, top, dress, dummyProduct];
+export const ARProducts = [officeChair, table, dummyProduct, dummyProduct];
